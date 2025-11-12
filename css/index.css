@@ -628,6 +628,74 @@ html, body {
     text-decoration: underline;
 }
 
+#faq-page {
+    padding-top: var(--header-h);
+    background-color: #F9FAFB;
+    padding-bottom: 80px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+.faq-title {
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 800;
+    color: var(--verde);
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.faq-item {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '▼';
+    font-size: 0.8rem;
+    color: #777;
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-item p {
+    padding: 0 24px 24px 24px;
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
 /* Responsive para Sign Up */
 @media (max-width: 768px) {
     .signup-fullscreen {
