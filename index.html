@@ -1,279 +1,285 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoMind</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index.css">
+    
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <body>
     <header>
-      <nav class="navbar">
-        <a
-          href="#"
-          class="logo"
-          aria-label="EcoMind - inicio"
-          id="nav-link-home"
-        >
-          <img src="images/ecomind_logo.png" alt="EcoMind" />
-        </a>
+    <nav class="navbar">
+        <a href="index.html" class="logo" aria-label="EcoMind - inicio">
+        <img src="images/ecomind_logo.png" alt="EcoMind"/> </a>
 
         <div class="navbar-right">
-          <ul class="menu">
+        <ul class="menu">
             <li><a href="#preguntas">PREGUNTAS FRECUENTES</a></li>
             <li><a href="#guia">GUÍA PARA PADRES</a></li>
-            <li><a href="#comunidad" id="nav-link-comunidad">COMUNIDAD</a></li>
-          </ul>
-        </div>
+            <li><a href="#comunidad">COMUNIDAD</a></li>
+        </ul>
+        </div class="navbar-right">
         <a href="#unete.html" class="btn-unete">
-          ÚNETE AHORA <span class="arrow"></span>
+        ÚNETE AHORA <span class="arrow"></span>
         </a>
-      </nav>
+    </nav>
     </header>
 
-    <div id="landing-page" class="page-section">
-      <section class="hero">
-        <img src="images/LandingPage/background.png" class="hero__img" />
+    <main>
+       <section class="hero">
+        <img src="images/LandingPage/background.png" class="hero__img">
 
         <div class="hero__glass">
-          <h1>Aprender a cuidar el planeta<br />empieza contigo</h1>
-          <a href="#retos" class="btn-primario"> Explorar retos </a>
+            <h1>Aprender a cuidar el planeta<br>empieza contigo</h1>
+            <a href="#retos" class="btn-primario">
+            Explorar retos
+            </a>
         </div>
 
         <div class="hero__wave" aria-hidden="true">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-            <path
-              d="M0,80 C240,120 480,0 720,40 C960,80 1200,120 1440,60 L1440,120 L0,120 Z"
-              fill="#ffffff"
-            />
-          </svg>
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,80 C240,120 480,0 720,40 C960,80 1200,120 1440,60 L1440,120 L0,120 Z" fill="#ffffff"/>
+            </svg>
         </div>
-      </section>
+        </section>
 
-      <section class="benefits" id="beneficios">
-        <div class="benefits__header">
-          <h2>¿Por qué usar <span class="brand-word">EcoMind</span>?</h2>
-        </div>
+        <section class="benefits" id="beneficios">
+            <div class="benefits__header">
+            <h2>¿Por qué usar <span class="brand-word">EcoMind</span>?</h2>
+            </div>
 
-        <div class="benefits__grid">
-          <div class="benefit">
-            <img
-              src="images/LandingPage/btn_blue.png"
-              alt="Aprende de forma divertida"
-              class="benefit__img"
-            />
-            <h3>Aprende de forma divertida</h3>
-            <p>
-              Convierte la educación ambiental en un juego interactivo lleno de
-              retos y recompensas.
-            </p>
-          </div>
+            <div class="benefits__grid">
+                <div class="benefit">
+                    <img src="images/LandingPage/btn_blue.png" alt="Aprende de forma divertida" class="benefit__img">
+                    <h3>Aprende de forma divertida</h3>
+                    <p>Convierte la educación ambiental en un juego interactivo lleno de retos y recompensas.</p>
+                </div>
 
-          <div class="benefit">
-            <img
-              src="images/LandingPage/btn_yellow.png"
-              alt="Obtén nuevas experiencias en familia"
-              class="benefit__img"
-            />
-            <h3>Obtén nuevas experiencias en familia</h3>
-            <p>
-              Disfruta actividades sostenibles junto a tus seres queridos y
-              aprendan juntos a cuidar el planeta.
-            </p>
-          </div>
+                <div class="benefit">
+                    <img src="images/LandingPage/btn_yellow.png" alt="Obtén nuevas experiencias en familia" class="benefit__img">
+                    <h3>Obtén nuevas experiencias en familia</h3>
+                    <p>Disfruta actividades sostenibles junto a tus seres queridos y aprendan juntos a cuidar el planeta.</p>
+                </div>
 
-          <div class="benefit">
-            <img
-              src="images/LandingPage/btn_green.png"
-              alt="Forma parte de una comunidad verde"
-              class="benefit__img"
-            />
-            <h3>Forma parte de una comunidad verde</h3>
-            <p>
-              Conecta con otros usuarios comprometidos y comparte tus logros
-              ecológicos.
-            </p>
-          </div>
+                <div class="benefit">
+                    <img src="images/LandingPage/btn_green.png" alt="Forma parte de una comunidad verde" class="benefit__img">
+                    <h3>Forma parte de una comunidad verde</h3>
+                    <p>Conecta con otros usuarios comprometidos y comparte tus logros ecológicos.</p>
+                </div>
 
-          <div class="benefit">
-            <img
-              src="images/LandingPage/btn_red.png"
-              alt="Genera un impacto real"
-              class="benefit__img"
-            />
-            <h3>Genera un impacto real</h3>
-            <p>
-              Aplica los conocimientos adquiridos y contribuye a mejorar tu
-              entorno desde acciones pequeñas.
-            </p>
-          </div>
-        </div>
-      </section>
+                <div class="benefit">
+                    <img src="images/LandingPage/btn_red.png" alt="Genera un impacto real" class="benefit__img">
+                    <h3>Genera un impacto real</h3>
+                    <p>Aplica los conocimientos adquiridos y contribuye a mejorar tu entorno desde acciones pequeñas.</p>
+                </div>
+            </div>
+        </section>
 
-      <section class="about" id="sobre-nosotros">
-        <h2>Sobre nosotros</h2>
+        <section class="about" id="sobre-nosotros">
+            <h2>Sobre nosotros</h2>
 
-        <div class="about__grid">
-          <article class="about-card">
-            <img
-              src="images/LandingPage/mision.png"
-              alt="Ícono de misión"
-              class="about-card__icon"
-            />
-            <h3>Misión</h3>
-            <p>
-              Promover la conciencia ambiental a través del aprendizaje digital,
-              ayudando a construir un futuro más sostenible para todos.
-            </p>
-          </article>
+            <div class="about__grid">
+                <!-- Misión -->
+                <article class="about-card">
+                    <img src="images/LandingPage/mision.png" alt="Ícono de misión" class="about-card__icon">
+                    <h3>Misión</h3>
+                    <p>
+                        Promover la conciencia ambiental a través del aprendizaje digital, ayudando a construir un futuro
+                        más sostenible para todos.
+                    </p>
+                </article>
 
-          <article class="about-card">
-            <img
-              src="images/LandingPage/vision.png"
-              alt="Ícono de visión"
-              class="about-card__icon"
-            />
-            <h3>Visión</h3>
-            <p>
-              Ser la principal plataforma educativa en sostenibilidad, donde cada
-              reto contribuya a mejorar el planeta paso a paso.
-            </p>
-          </article>
+                <!-- Visión -->
+                <article class="about-card">
+                    <img src="images/LandingPage/vision.png" alt="Ícono de visión" class="about-card__icon">
+                    <h3>Visión</h3>
+                    <p>
+                        Ser la principal plataforma educativa en sostenibilidad, donde cada reto contribuya a mejorar
+                        el planeta paso a paso.
+                    </p>
+                </article>
 
-          <article class="about-card">
-            <img
-              src="images/plant.png"
-              alt="Ícono de quienes somos"
-              class="about-card__icon"
-            />
-            <h3>¿Quiénes somos?</h3>
-            <p>
-              Somos un grupo de jóvenes comprometidos con el cambio climático
-              que combina tecnología y educación para inspirar acción verde.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer__inner">
-          <nav class="footer__links" aria-label="Enlaces de pie de página">
-            <a href="#">Nosotros</a>
-            <a href="#">Blog</a>
-            <a href="#">Tienda</a>
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-          </nav>
-        </div>
-      </footer>
-    </div>
+                <!-- ¿Quiénes somos? -->
+                <article class="about-card">
+                    <img src="images/plant.png" alt="Ícono de quienes somos" class="about-card__icon">
+                    <h3>¿Quiénes somos?</h3>
+                    <p>
+                        Somos un grupo de jóvenes comprometidos con el cambio climático que combina tecnología y
+                        educación para inspirar acción verde.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+ <!-- SEGUNDA SECCIÓN - SIGN UP -->
     <div id="signup-page" class="page-section">
-      <div class="signup-fullscreen">
-        <div class="signup-left">
-          <div class="logo-large">
-            <img
-              src="images/ecomind_logo.png"
-              alt="EcoMind logo"
-              class="logo-img"
-            />
-          </div>
-          <p class="tagline">Aprender a cuidar el planeta empieza contigo</p>
+        <div class="signup-fullscreen">
+            <div class="signup-left">
+                <div class="logo-large">
+                    <img src="images/ecomind_logo.png" alt="EcoMind logo" class="logo-img">
+                </div>
+                <p class="tagline">Aprender a cuidar el planeta empieza contigo</p>
+            </div>
+            
+            <div class="signup-right">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <span class="link-text">terms & policy</span></label>
+                    </div>
+                    
+                    <button type="submit" class="btn-signup">Sign up</button>
+                    
+                    <div class="divider">Or</div>
+                    
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social btn-google">
+                            <svg width="20" height="20" viewBox="0 0 20 20">
+                                <path fill="#4285F4" d="M19.6 10.2c0-.7-.1-1.4-.2-2H10v3.8h5.4c-.2 1.2-1 2.2-2 2.9v2.5h3.2c1.9-1.7 3-4.3 3-7.2z"/>
+                                <path fill="#34A853" d="M10 20c2.7 0 4.9-.9 6.6-2.4l-3.2-2.5c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.8-5.6-4.1H1.1v2.6C2.8 17.4 6.1 20 10 20z"/>
+                                <path fill="#FBBC05" d="M4.4 12c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V5.4H1.1C.4 6.8 0 8.4 0 10s.4 3.2 1.1 4.6l3.3-2.6z"/>
+                                <path fill="#EA4335" d="M10 3.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9C15 .9 12.7 0 10 0 6.1 0 2.8 2.6 1.1 6.4l3.3 2.6C5.2 5.7 7.4 3.9 10 3.9z"/>
+                            </svg>
+                            Sign in with Google
+                        </button>
+                        
+                        <button type="button" class="btn-social btn-apple">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M16.9 13.8c-.3.7-.6 1.3-1 1.8-.5.7-1 1.1-1.4 1.4-.6.5-1.2.8-1.9.8-.5 0-1.1-.1-1.7-.4-.6-.3-1.2-.4-1.7-.4-.6 0-1.2.1-1.8.4-.6.3-1.1.4-1.6.4-.7.1-1.4-.2-2-.8-.5-.3-1-.8-1.5-1.5C2.8 15 2.3 14 2 12.8c-.4-1.3-.6-2.5-.6-3.7 0-1.4.3-2.6.9-3.6.5-.8 1.1-1.4 2-1.9.8-.5 1.7-.7 2.7-.8.5 0 1.2.2 2 .5.8.3 1.3.5 1.5.5.2 0 .8-.2 1.7-.6.9-.4 1.6-.5 2.2-.5 1.6.1 2.9.7 3.8 1.8-1.5.9-2.2 2.2-2.2 3.9 0 1.3.5 2.4 1.4 3.3.4.4.9.8 1.4 1-.1.3-.2.6-.4.9zM13 1.8c0 1-.4 2-1.1 2.8-.9 1-1.9 1.6-3.1 1.5 0-.1 0-.2 0-.4 0-1 .4-2 1.2-2.8.4-.4.8-.8 1.4-1.1.6-.3 1.1-.5 1.6-.5.1.2.1.3.1.5z"/>
+                            </svg>
+                            Sign in with Apple
+                        </button>
+                    </div>
+                    
+                    <p class="signin-text">Have an account? <a href="#" class="link-signin">Sign In</a></p>
+                    
+                    <p class="back-text"><a href="#" class="link-back" id="btnRegresar">Regresar</a></p>
+                </form>
+            </div>
         </div>
-
-        <div class="signup-right">
-          <form id="signupForm">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" name="name" placeholder="Enter your name" required />
-            </div>
-
-            <div class="form-group">
-              <label>Email address</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-
-            <div class="checkbox-group">
-              <input type="checkbox" id="terms" required />
-              <label for="terms"
-                >I agree to the <span class="link-text">terms & policy</span></label
-              >
-            </div>
-
-            <button type="submit" class="btn-signup">Sign up</button>
-
-            <div class="divider">Or</div>
-
-            <div class="social-buttons">
-              <button type="button" class="btn-social btn-google">
-                <svg width="20" height="20" viewBox="0 0 20 20">
-                  <path
-                    fill="#4285F4"
-                    d="M19.6 10.2c0-.7-.1-1.4-.2-2H10v3.8h5.4c-.2 1.2-1 2.2-2 2.9v2.5h3.2c1.9-1.7 3-4.3 3-7.2z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M10 20c2.7 0 4.9-.9 6.6-2.4l-3.2-2.5c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.8-5.6-4.1H1.1v2.6C2.8 17.4 6.1 20 10 20z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M4.4 12c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V5.4H1.1C.4 6.8 0 8.4 0 10s.4 3.2 1.1 4.6l3.3-2.6z"
-                  />
-                  <path
-                    fill="#EA4335"
-                    d="M10 3.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9C15 .9 12.7 0 10 0 6.1 0 2.8 2.6 1.1 6.4l3.3 2.6C5.2 5.7 7.4 3.9 10 3.9z"
-                  />
-                </svg>
-                Sign in with Google
-              </button>
-
-              <button type="button" class="btn-social btn-apple">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M16.9 13.8c-.3.7-.6 1.3-1 1.8-.5.7-1 1.1-1.4 1.4-.6.5-1.2.8-1.9.8-.5 0-1.1-.1-1.7-.4-.6-.3-1.2-.4-1.7-.4-.6 0-1.2.1-1.8.4-.6.3-1.1.4-1.6.4-.7.1-1.4-.2-2-.8-.5-.3-1-.8-1.5-1.5C2.8 15 2.3 14 2 12.8c-.4-1.3-.6-2.5-.6-3.7 0-1.4.3-2.6.9-3.6.5-.8 1.1-1.4 2-1.9.8-.5 1.7-.7 2.7-.8.5 0 1.2.2 2 .5.8.3 1.3.5 1.5.5.2 0 .8-.2 1.7-.6.9-.4 1.6-.5 2.2-.5 1.6.1 2.9.7 3.8 1.8-1.5.9-2.2 2.2-2.2 3.9 0 1.3.5 2.4 1.4 3.3.4.4.9.8 1.4 1-.1.3-.2.6-.4.9zM13 1.8c0 1-.4 2-1.1 2.8-.9 1-1.9 1.6-3.1 1.5 0-.1 0-.2 0-.4 0-1 .4-2 1.2-2.8.4-.4.8-.8 1.4-1.1.6-.3 1.1-.5 1.6-.5.1.2.1.3.1.5z"
-                  />
-                </svg>
-                Sign in with Apple
-              </button>
-            </div>
-
-            <p class="signin-text">
-              Have an account? <a href="#" class="link-signin">Sign In</a>
-            </p>
-
-            <p class="back-text">
-              <a href="#" class="link-back" id="btnRegresar">Regresar</a>
-            </p>
-          </form>
-        </div>
-      </div>
     </div>
-    <div id="comunidad-page" class="page-section">
+
+    <!-- TERCERA SECCIÓN - FAQ -->
+
+    <div id="faq-page" class="page-section">
+        <div class="faq-container">
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+            
+            <details class="faq-item">
+                <summary>¿Puedo usar la app sin conexión a internet?</summary>
+                <p>Sí, la aplicación está diseñada para funcionar en modo offline. Puedes completar retos y leer guías sin conexión. Tu progreso se sincronizará automáticamente la próxima vez que te conectes a internet.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>¿Puedo eliminar mi cuenta?</summary>
+                <p>Sí, puedes eliminar tu cuenta en cualquier momento desde la sección de 'Ajustes' en tu perfil. Ten en cuenta que esta acción es irreversible y se borrarán todos tus datos y progreso.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>¿Las actividades son gratuitas?</summary>
+                <p>¡Sí! Todas las actividades educativas, retos y funciones principales de EcoMind son completamente gratuitas. Nuestro objetivo es que el aprendizaje ambiental sea accesible para todos.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>¿Puedo cambiar mi compromiso ambiental?</summary>
+                <p>Claro. Puedes editar o actualizar tus compromisos ambientales personales en cualquier momento desde tu perfil. ¡Lo importante es mantener la motivación!</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Cómo puedo ganar mas puntos?</summary>
+                <p>Ganas puntos (EcoPoints) completando retos diarios, terminando actividades educativas (como lecturas o videos), participando en eventos de la comunidad y manteniendo rachas semanales.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Cómo invito a mi familia?</summary>
+                <p>En tu perfil, encontrarás la sección "Mi Familia". Desde allí, puedes crear un grupo familiar y enviar invitaciones a tus padres o hijos usando sus correos electrónicos o nombres de usuario.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Cómo funcionan los puntos y recompensas?</summary>
+                <p>Los puntos que ganas te ayudan a subir en el ranking y a desbloquear insignias especiales. Las recompensas son reconocimientos virtuales que celebran tus logros y tu constancia en el cuidado del planeta.</p>
+            </details>
+        </div>
+    </div>
+
+    <div id="parents-guide-page" class="page-section">
+        <section class="guide-hero">
+            <div class="guide-content-wrapper">
+                <div class="guide-text-content">
+                    <h1>Guia Para Padres</h1>
+                    <p>EcoMind facilita que las familias aprendan y crezcan juntas en temas de sostenibilidad. Nuestra plataforma está diseñada para que padres e hijos puedan participar de manera segura y educativa.</p>
+                    <p>Crea tu grupo familiar, establece objetivos compartidos y celebra los logros de cada miembro mientras aprenden sobre el cuidado del medio ambiente.</p>
+                    <ul>
+                        <li>Reportes de progreso detallados para toda la familia</li>
+                        <li>Comunicación segura dentro de la plataforma</li>
+                        <li>Retos familiares diseñados para todas las edades</li>
+                        <li>Contenido educativo verificado y apropiado</li>
+                    </ul>
+                </div>
+                <div class="guide-image-container">
+                    <img src="images/parent-guide/familia.png" alt="Familia aprendiendo en tablet" class="guide-hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="educational-resources">
+            <h2>Recursos Educativos</h2>
+            <p class="resources-subtitle">Todo lo que encontrarás para empezar tu viaje educativo ambiental</p>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <img src="images/parent-guide/books.png" alt="Lecturas Icono" class="resource-icon">
+                    <h3>Lecturas</h3>
+                    <p>Contenido estructurado sobre reciclaje, ecología y biodiversidad</p>
+                </div>
+                <div class="resource-card">
+                    <img src="images/parent-guide/video.png" alt="Videos Icono" class="resource-icon">
+                    <h3>Videos</h3>
+                    <p>Aprende con contenido audiovisual dinámico y fácil de seguir</p>
+                </div>
+                <div class="resource-card">
+                    <img src="images/parent-guide/infografia.png" alt="Infografías Icono" class="resource-icon">
+                    <h3>Infografías</h3>
+                    <p>Visualiza información compleja de manera clara y atractiva</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="parent-tips">
+            <h2>Consejos para Padres</h2>
+            <ul>
+                <li><strong>Predica con el ejemplo:</strong> Tus acciones son el mejor modelo de aprendizaje para tus hijos.</li>
+                <li><strong>Celebra los pequeños logros:</strong> Reconoce cada paso que dan hacia hábitos más sostenibles.</li>
+                <li><strong>Hazlo divertido:</strong> Transforma las actividades ambientales en juegos y experiencias positivas.</li>
+                <li><strong>Mantén la constancia:</strong> Los hábitos se forman con práctica diaria y paciencia.</li>
+                <li><strong>Fomenta la curiosidad:</strong> Responde sus preguntas y motívalos a explorar más sobre la naturaleza.</li>
+                <li><strong>Crea rutinas verdes:</strong> Incorpora prácticas sostenibles en la rutina diaria familiar.</li>
+            </ul>
+        </section>
+    </div>
+
+     <div id="comunidad-page" class="page-section">
       <section class="hero-section">
         <div class="hero-content">
           <a href="#unete.html" class="btn-join-hero btn-unete"
@@ -357,65 +363,7 @@
               />
             </div>
           </div>
-          
-    <div id="parents-guide-page" class="page-section">
-        <section class="guide-hero">
-            <div class="guide-content-wrapper">
-                <div class="guide-text-content">
-                    <h1>Guia Para Padres</h1>
-                    <p>EcoMind facilita que las familias aprendan y crezcan juntas en temas de sostenibilidad. Nuestra plataforma está diseñada para que padres e hijos puedan participar de manera segura y educativa.</p>
-                    <p>Crea tu grupo familiar, establece objetivos compartidos y celebra los logros de cada miembro mientras aprenden sobre el cuidado del medio ambiente.</p>
-                    <ul>
-                        <li>Reportes de progreso detallados para toda la familia</li>
-                        <li>Comunicación segura dentro de la plataforma</li>
-                        <li>Retos familiares diseñados para todas las edades</li>
-                        <li>Contenido educativo verificado y apropiado</li>
-                    </ul>
-                </div>
-                <div class="guide-image-container">
-                    <img src="images/parent-guide/familia.png" alt="Familia aprendiendo en tablet" class="guide-hero-image">
-                </div>
-            </div>
-        </section>
-
-        <section class="educational-resources">
-            <h2>Recursos Educativos</h2>
-            <p class="resources-subtitle">Todo lo que encontrarás para empezar tu viaje educativo ambiental</p>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <img src="images/parent-guide/books.png" alt="Lecturas Icono" class="resource-icon">
-                    <h3>Lecturas</h3>
-                    <p>Contenido estructurado sobre reciclaje, ecología y biodiversidad</p>
-                </div>
-                <div class="resource-card">
-                    <img src="images/parent-guide/video.png" alt="Videos Icono" class="resource-icon">
-                    <h3>Videos</h3>
-                    <p>Aprende con contenido audiovisual dinámico y fácil de seguir</p>
-                </div>
-                <div class="resource-card">
-                    <img src="images/parent-guide/infografia.png" alt="Infografías Icono" class="resource-icon">
-                    <h3>Infografías</h3>
-                    <p>Visualiza información compleja de manera clara y atractiva</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="parent-tips">
-            <h2>Consejos para Padres</h2>
-            <ul>
-                <li><strong>Predica con el ejemplo:</strong> Tus acciones son el mejor modelo de aprendizaje para tus hijos.</li>
-                <li><strong>Celebra los pequeños logros:</strong> Reconoce cada paso que dan hacia hábitos más sostenibles.</li>
-                <li><strong>Hazlo divertido:</strong> Transforma las actividades ambientales en juegos y experiencias positivas.</li>
-                <li><strong>Mantén la constancia:</strong> Los hábitos se forman con práctica diaria y paciencia.</li>
-                <li><strong>Fomenta la curiosidad:</strong> Responde sus preguntas y motívalos a explorar más sobre la naturaleza.</li>
-                <li><strong>Crea rutinas verdes:</strong> Incorpora prácticas sostenibles en la rutina diaria familiar.</li>
-            </ul>
-        </section>
-    </div>
-
-
-
-          <div class="content-block" id="slide2" style="display: none">
+           <div class="content-block" id="slide2" style="display: none">
             <div class="slide-item">
               <img
                 src="images/LandingPage_comunidad/ambiente.png"
@@ -453,7 +401,6 @@
             style="display: none"
             aria-label="Anterior diapositiva"
           >
-            ‹
           </button>
           </div>
       </section>
@@ -510,19 +457,20 @@
         </div>
       </section>
 
-      <footer class="footer">
+
+
+    <footer class="footer">
         <div class="footer__inner">
-          <nav class="footer__links" aria-label="Enlaces de pie de página">
+            <nav class="footer__links" aria-label="Enlaces de pie de página">
             <a href="#">Nosotros</a>
             <a href="#">Blog</a>
             <a href="#">Tienda</a>
             <a href="#">Términos</a>
             <a href="#">Privacidad</a>
-          </nav>
+            </nav>
         </div>
-      </footer>
-    </div>
+    </footer>
+
     <script src="js/index.js"></script>
   </body>
 </html>
-
