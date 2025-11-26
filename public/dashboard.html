@@ -503,6 +503,30 @@
       </section>
     </main>
   </div>
+  
+ <!-- Modal Editar Compromiso -->
+  <div class="modal-overlay" id="modal-compromiso">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Mi Compromiso</h3>
+        <button class="btn-cancelar" id="modal-close">Cancelar</button>
+      </div>
+      <div class="modal-body">
+        <div class="compromiso-texto-editable">
+          <p class="compromiso-texto-modal" id="compromiso-texto-modal">Promover hábitos sostenibles en mi hogar y escuela, compartiendo conocimientos sobre reciclaje y conservación del medio ambiente</p>
+          <textarea id="textarea-compromiso" class="compromiso-textarea-hidden" maxlength="150" style="display:none;">Promover hábitos sostenibles en mi hogar y escuela, compartiendo conocimientos sobre reciclaje y conservación del medio ambiente</textarea>
+        </div>
+        <p class="agregar-mas">Agregar más...</p>
+        <div class="character-counter">
+          <span id="char-count">112</span>/150
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal-primary" id="btn-guardar-compromiso">Guardar Compromiso</button>
+        <button class="btn-modal-secondary" id="btn-eliminar-compromiso">Eliminar compromiso</button>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/scripts/dashboard.js"></script>
 </body>

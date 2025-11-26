@@ -1160,11 +1160,13 @@ body {
    ========================================================= */
 
 /* El dashboard ocupa toda la pantalla y la página NO scrollea */
+html,
 body.dashboard-body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden; /* sin scroll solo en el dashboard */
+  height: 100vh;
+  overflow-x: hidden; /* sin scroll horizontal */
+  overflow-y: auto; /* permitir scroll vertical */
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
 }
@@ -1504,7 +1506,7 @@ body.dashboard-body {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .perfil-card-header {
