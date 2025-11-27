@@ -200,10 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
-
-
-
 
 
 // --- NAVEGACIÓN INTERNA DE COMUNIDAD ---
@@ -237,3 +233,202 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --- NAVEGACIÓN EVENTOS ---
+  
+  const communityEventosBtn = document.querySelectorAll('.action-big-btn');
+  let btnEventos = null;
+
+  // Buscar botón eventos
+  communityEventosBtn.forEach(btn => {
+    if (btn.innerText.includes('Eventos')) {
+      btnEventos = btn;
+    }
+  });
+
+  const pageComunidadEventos = document.getElementById('page-comunidad-eventos');
+
+  if (btnEventos && pageComunidadMain && pageComunidadEventos) {
+    btnEventos.addEventListener('click', () => {
+      // Ocultar main y logros
+      pageComunidadMain.classList.remove('active');
+      if(pageComunidadLogros) pageComunidadLogros.classList.remove('active');
+      
+      // Mostrar Eventos
+      pageComunidadEventos.classList.add('active');
+    });
+  }
+
+  // Sidebar reset (actualización): Asegurar que cierra Eventos también
+  if (btnSidebarComunidad) {
+    btnSidebarComunidad.addEventListener('click', () => {
+      if (pageComunidadLogros && pageComunidadLogros.classList.contains('active')) {
+        pageComunidadLogros.classList.remove('active');
+      }
+      if (pageComunidadEventos && pageComunidadEventos.classList.contains('active')) {
+        pageComunidadEventos.classList.remove('active');
+      }
+      pageComunidadMain.classList.add('active');
+    });
+  }
+
+
+  // --- LÓGICA DEL MODAL CREAR EVENTO ---
+
+  // 1. Obtener elementos
+  const modalCrearEvento = document.getElementById('modal-crear-evento');
+  // El botón que abre el modal está en la vista de "Eventos"
+  const btnAbrirCrearEvento = document.querySelector('.btn-crear-evento'); 
+  
+  const btnCancelarEvento = document.getElementById('btn-cancelar-crear-evento');
+  const btnConfirmarEvento = document.getElementById('btn-confirmar-crear-evento');
+  const btnAdjuntarClip = document.querySelector('.btn-adjuntar-clip');
+
+
+  // 2. Función para abrir el modal
+  if (btnAbrirCrearEvento && modalCrearEvento) {
+    btnAbrirCrearEvento.addEventListener('click', () => {
+      modalCrearEvento.classList.add('active');
+      // Opcional: limpiar inputs al abrir
+      const inputs = modalCrearEvento.querySelectorAll('input, textarea');
+      inputs.forEach(input => input.value = '');
+    });
+  }
+
+  // 3. Función para cerrar el modal
+  function cerrarModalEvento() {
+    if (modalCrearEvento) {
+      modalCrearEvento.classList.remove('active');
+    }
+  }
+
+  // Cerrar con botón Cancelar
+  if (btnCancelarEvento) {
+    btnCancelarEvento.addEventListener('click', cerrarModalEvento);
+  }
+
+  // Cerrar con botón Crear (simulación)
+  if (btnConfirmarEvento) {
+    btnConfirmarEvento.addEventListener('click', () => {
+      console.log('Evento creado (simulación)');
+      // Aquí iría la lógica real de guardado
+      cerrarModalEvento();
+    });
+  }
+
+  // Simulación botón clip
+  if (btnAdjuntarClip) {
+    btnAdjuntarClip.addEventListener('click', () => {
+        console.log('Simulación: Abrir selector de archivos');
+        // No hace nada visual, solo simula el click
+    });
+  }
+
+  // Cerrar al hacer clic fuera del contenido del modal
+  if (modalCrearEvento) {
+    modalCrearEvento.addEventListener('click', (e) => {
+      if (e.target === modalCrearEvento) {
+        cerrarModalEvento();
+      }
+    });
+  }
+
+
+// =========================================================
+  //UNIRSE A EVENTOS
+  // =========================================================
+  const modalSeleccion = document.getElementById('modal-seleccion-inscripcion');
+  const btnIndividual = document.getElementById('btn-opcion-individual');
+  const btnFamilia = document.getElementById('btn-opcion-familia');
+  const gridEventos = document.querySelector('.eventos-grid');
+
+  const pageExitoIndividual = document.getElementById('page-exito-individual');
+  const pageExitoFamilia = document.getElementById('page-exito-familia');
+  
+  let tarjetaEventoActual = null;
+
+  if (gridEventos) {
+    gridEventos.addEventListener('click', (e) => {
+      if (e.target.classList.contains('unirse')) {
+        tarjetaEventoActual = e.target.closest('.evento-card');
+        const titulo = tarjetaEventoActual.querySelector('.evento-title').innerText;
+        const fecha = tarjetaEventoActual.getAttribute('data-fecha') || "Fecha pendiente";
+        const lugar = tarjetaEventoActual.getAttribute('data-lugar') || "Lugar pendiente";
+        document.getElementById('modal-evento-nombre').textContent = titulo;
+        document.getElementById('modal-evento-fecha').textContent = fecha;
+        document.getElementById('modal-evento-lugar').textContent = lugar;
+        if(modalSeleccion) modalSeleccion.classList.add('active');
+      }
+
+      const btnX = e.target.closest('.btn-evento-close');
+      if (btnX) {
+        const card = btnX.closest('.evento-card');
+        const btnMain = card.querySelector('.btn-evento-estado');
+        if (btnMain.classList.contains('unido')) {
+          if(confirm("¿Deseas salirte de este evento?")) {
+            btnMain.textContent = "Unirse al evento";
+            btnMain.classList.remove('unido');
+            btnMain.classList.add('unirse');
+            btnMain.style.backgroundColor = "#69A44E"; 
+            btnX.classList.remove('red');
+            btnX.classList.add('grey');
+            btnX.style.backgroundColor = "#C4C4C4";
+            const stroke = btnX.querySelector('line'); 
+            if(stroke) stroke.style.stroke = "white"; 
+          }
+        }
+      }
+    });
+  }
+
+  if (btnIndividual) {
+    btnIndividual.addEventListener('click', () => {
+      if(modalSeleccion) modalSeleccion.classList.remove('active');
+      if(pageComunidadEventos) pageComunidadEventos.classList.remove('active');
+      if(pageExitoIndividual) pageExitoIndividual.classList.add('active');
+    });
+  }
+
+  if (btnFamilia) {
+    btnFamilia.addEventListener('click', () => {
+      if(modalSeleccion) modalSeleccion.classList.remove('active');
+      if(pageComunidadEventos) pageComunidadEventos.classList.remove('active');
+      if(pageExitoFamilia) pageExitoFamilia.classList.add('active');
+    });
+  }
+
+  if (modalSeleccion) {
+    modalSeleccion.addEventListener('click', (e) => {
+      if (e.target === modalSeleccion) modalSeleccion.classList.remove('active');
+    });
+  }
+
+
+  const botonesContinuarExito = document.querySelectorAll('.btn-continuar-exito');
+  botonesContinuarExito.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(pageExitoIndividual) pageExitoIndividual.classList.remove('active');
+      if(pageExitoFamilia) pageExitoFamilia.classList.remove('active');
+      if(pageComunidadEventos) pageComunidadEventos.classList.add('active');
+      if (tarjetaEventoActual) {
+        transformarTarjetaAUnido(tarjetaEventoActual);
+      }
+    });
+  });
+
+  function transformarTarjetaAUnido(card) {
+    const btnMain = card.querySelector('.btn-evento-estado');
+    const btnClose = card.querySelector('.btn-evento-close');
+
+    btnMain.textContent = "Ya te uniste";
+    btnMain.classList.remove('unirse');
+    btnMain.classList.add('unido');
+    btnMain.style.backgroundColor = "#C4C4C4"; 
+
+    if (btnClose) {
+      btnClose.classList.remove('grey');
+      btnClose.classList.add('red');
+      btnClose.style.backgroundColor = "#FF5555";
+    }
+  }
+});
