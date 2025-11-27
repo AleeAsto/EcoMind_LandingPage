@@ -203,3 +203,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+
+// --- NAVEGACIÓN INTERNA DE COMUNIDAD ---
+
+  const communityButtons = document.querySelectorAll('.action-big-btn');
+  let btnLogros = null;
+
+  communityButtons.forEach(btn => {
+    if (btn.innerText.includes('Logros')) {
+      btnLogros = btn;
+    }
+  });
+
+  const pageComunidadMain = document.getElementById('page-comunidad');
+  const pageComunidadLogros = document.getElementById('page-comunidad-logros');
+
+  if (btnLogros && pageComunidadMain && pageComunidadLogros) {
+    btnLogros.addEventListener('click', () => {
+      pageComunidadMain.classList.remove('active');
+      pageComunidadLogros.classList.add('active');
+    });
+  }
+
+
+  const btnSidebarComunidad = document.querySelector('.dash-item[data-page="comunidad"]');
+  if (btnSidebarComunidad) {
+    btnSidebarComunidad.addEventListener('click', () => {
+      if (pageComunidadLogros.classList.contains('active')) {
+        pageComunidadLogros.classList.remove('active');
+        pageComunidadMain.classList.add('active');
+      }
+    });
+  }
