@@ -4431,6 +4431,13 @@ body.dashboard-body {
   transform: translateY(1px);
 }
 
+.btn-invitar.invited {
+  background: #d3d3d3 !important;
+  color: #888 !important;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Select de participantes */
 .select-participantes {
   margin-top: 0.2rem;

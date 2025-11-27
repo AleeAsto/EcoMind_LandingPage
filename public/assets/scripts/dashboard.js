@@ -334,6 +334,13 @@ document.addEventListener('DOMContentLoaded', function() {
             body.style.display = isOpen ? 'block' : 'none';
         });
     });
+    
+    document.querySelectorAll('.btn-invitar').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.add('invited');
+        btn.textContent = "Invitado";
+      });
+  });
 
 
 });
