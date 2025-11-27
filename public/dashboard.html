@@ -181,6 +181,181 @@
           </div>
         </div>
 
+        <div id="page-comunidad-eventos" class="dash-page">
+          <div class="comunidad-layout">
+            
+            <div class="eventos-top-bar">
+              <div class="search-bar-container full-width-search">
+                <button class="search-menu-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <input type="text" placeholder="Hinted search text" class="search-input">
+                <button class="search-icon-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+              </div>
+              
+              <button class="btn-crear-evento">
+                <span class="plus-icon">+</span> Crear evento
+              </button>
+            </div>
+
+            <div class="eventos-grid">
+              
+              <div class="evento-card" data-fecha="26 de octubre - 2 pm" data-lugar="Parque central">
+                <div class="evento-info">
+                  <div class="evento-header-row">
+                    <div class="evento-text-col">
+                      <h4 class="evento-title">Recolección de basura</h4>
+                      <p class="evento-desc">Nos reuniremos en el parque central para recoger residuos y limpiar las áreas verdes el sábado 26 de octubre</p>
+                    </div>
+                    <img src="assets/images/comunidad/recoleccionbasura.jpg" alt="Recolección" class="evento-img">
+                  </div>
+                  
+                  <div class="evento-actions">
+                    <button class="btn-evento-estado unido" style="background-color: #C4C4C4;">Ya te uniste</button>
+                    <button class="btn-evento-close red" style="background-color: #FF5555;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="evento-card" data-fecha="2 de noviembre - 11 am" data-lugar="Playa San Miguel">
+                <div class="evento-info">
+                  <div class="evento-header-row">
+                    <div class="evento-text-col">
+                      <h4 class="evento-title">Limpieza de playa</h4>
+                      <p class="evento-desc">Nos reuniremos en la playa San Miguel para retirar plásticos y desechos el sábado 2 de noviembre</p>
+                    </div>
+                    <img src="assets/images/comunidad/limpiaplaya.png" alt="Playa" class="evento-img">
+                  </div>
+                  
+                  <div class="evento-actions">
+                    <button class="btn-evento-estado unirse">Unirse al evento</button>
+                    <button class="btn-evento-close grey">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="evento-card" data-fecha="9 de noviembre - 10 am" data-lugar="Huerto ecológico - San Miguel">
+                <div class="evento-info">
+                  <div class="evento-header-row">
+                    <div class="evento-text-col">
+                      <h4 class="evento-title">Cosecha comunal</h4>
+                      <p class="evento-desc">Nos reuniremos en el huerto ecológico del barrio para cosechar productos frescos el domingo 9 de noviembre</p>
+                    </div>
+                    <img src="assets/images/comunidad/cosecha.jpg" alt="Cosecha" class="evento-img">
+                  </div>
+                  
+                  <div class="evento-actions">
+                    <button class="btn-evento-estado unirse">Unirse al evento</button>
+                    <button class="btn-evento-close grey">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="pagination-container">
+              <button class="pagination-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <span class="pagination-text">Pagina 1</span>
+              <button class="pagination-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-crear-evento">
+          <div class="modal-content modal-evento-box">
+            
+            <div class="modal-evento-header-row">
+              <h2 class="modal-evento-title">Nuevo evento</h2>
+              <button class="btn-adjuntar-clip">
+                <img src="assets/images/comunidad/clip.png" alt="Adjuntar" class="clip-icon-img">
+              </button>
+            </div>
+          
+            <div class="modal-evento-form">
+              
+              <div class="form-group-evento">
+                <label>Nombre</label>
+                <input type="text" class="input-evento-styled">
+              </div>
+            
+              <div class="form-row-evento">
+                <div class="form-group-evento">
+                  <label>Fecha</label>
+                  <input type="date" class="input-evento-styled">
+                </div>
+                <div class="form-group-evento">
+                  <label>Hora</label>
+                  <input type="time" class="input-evento-styled">
+                </div>
+              </div>
+            
+              <div class="form-group-evento">
+                <label>Punto de encuentro</label>
+                <input type="text" class="input-evento-styled">
+              </div>
+            
+              <div class="form-group-evento">
+                <label>Descripción</label>
+                <textarea class="textarea-evento-styled" rows="4"></textarea>
+              </div>
+            
+            </div>
+          
+            <div class="modal-evento-actions">
+              <button class="btn-modal-create" id="btn-confirmar-crear-evento">Crear evento</button>
+              <button class="btn-modal-cancel" id="btn-cancelar-crear-evento">Cancelar</button>
+            </div>
+          
+          </div>
+        </div>
+
+      <div class="modal-overlay" id="modal-seleccion-inscripcion">
+        <div class="modal-content modal-seleccion-box">
+          
+          <h2 class="modal-seleccion-title">¿Cómo desea inscribirse al evento seleccionado?</h2>
+
+          <div class="modal-seleccion-info">
+            <p><strong>Evento:</strong> <span id="modal-evento-nombre"></span></p>
+            <p><strong>Fecha y hora:</strong> <span id="modal-evento-fecha"></span></p>
+            <p><strong>Lugar:</strong> <span id="modal-evento-lugar"></span></p>
+          </div>
+        
+          <div class="modal-seleccion-buttons">
+            <button class="btn-seleccion-green" id="btn-opcion-individual">Individual</button>
+            <button class="btn-seleccion-blue" id="btn-opcion-familia">Familia</button>
+          </div>  
+
+        </div>
+      </div>
+
+        <div id="page-exito-individual" class="dash-page">
+          <div class="exito-container">
+            <h2 class="exito-title">Te uniste al evento de la comunidad</h2>
+            <img src="assets/images/comunidad/eventoindividual.png" alt="Éxito Individual" class="exito-img">
+            <button class="btn-continuar-exito">Continuar</button>
+          </div>
+        </div>
+      
+        <div id="page-exito-familia" class="dash-page">
+          <div class="exito-container">
+            <h2 class="exito-title">Tu familia se unió al evento de la comunidad</h2>
+            <img src="assets/images/comunidad/eventofamilia.png" alt="Éxito Familia" class="exito-img">
+            <button class="btn-continuar-exito">Continuar</button>
+          </div>
+        </div>
         <!-- RANKING -->
         <div id="page-ranking" class="dash-page">
           <h1 class="dash-title">Ranking</h1>
