@@ -494,11 +494,113 @@
         </div>
 
 
-        <!-- AJUSTES -->
-        <div id="page-ajustes" class="dash-page">
-          <h1 class="dash-title">Ajustes</h1>
-          <p class="dash-subtitle">Preferencias y configuración.</p>
+<!-- AJUSTES -->
+<div id="page-ajustes" class="dash-page">
+  <h1 class="dash-title">Ajustes</h1>
+  <p class="dash-subtitle">Personaliza tu experiencia en EcoMind.</p>
+
+  <div class="ajustes-container">
+
+    <!-- SECCIÓN CUENTA -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Cuenta</h3>
+      </div>
+      <div class="perfil-card-body ajustes-body">
+
+        <div class="ajuste-item">
+          <label>Nombre</label>
+          <input type="text" class="ajuste-input" value="Marcos" />
         </div>
+
+        <div class="ajuste-item">
+          <label>Usuario</label>
+          <input type="text" class="ajuste-input" value="MarquitosElReciclador777" />
+        </div>
+
+        <div class="ajuste-item">
+          <label>Correo</label>
+          <input type="email" class="ajuste-input" value="marcos@example.com" />
+        </div>
+
+        <button class="btn-modal-primary">Actualizar datos</button>
+      </div>
+    </div>
+
+    <!-- SECCIÓN NOTIFICACIONES -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Notificaciones</h3>
+      </div>
+
+      <div class="perfil-card-body ajustes-body">
+
+        <div class="ajuste-item toggle-row">
+          <span>Notificaciones de retos</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="ajuste-item toggle-row">
+          <span>Recordatorios diarios</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="ajuste-item toggle-row">
+          <span>Novedades de la comunidad</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN APLICACIÓN -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Preferencias de la App</h3>
+      </div>
+      <div class="perfil-card-body ajustes-body">
+        
+        <div class="ajuste-item toggle-row">
+          <span>Tema oscuro</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="ajuste-item">
+          <label>Idioma</label>
+          <select class="ajuste-input">
+            <option selected>Español</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CERRAR SESIÓN -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Sesión</h3>
+      </div>
+      <div class="perfil-card-body ajustes-body">
+        <button class="btn-miembro-danger" style="width: 100%; margin-top: 10px;">
+          Cerrar Sesión
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
       </section>
     </main>
