@@ -214,38 +214,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+// ==========================================
+    // 5. LÓGICA DE BOTONES (Energía vs Aprende Más)
     // ==========================================
-    // 5. LÓGICA DEL MENÚ OVERLAY (APRENDE MÁS)
-    // ==========================================
-    const btnAprendeMas = document.querySelector('.btn-game-footer'); 
-    const overlayAprende = document.getElementById('aprende-overlay'); 
+    
+    const btnEnergia = document.querySelector('.btn-game-header'); // Botón Arriba (Amarillo)
+    const btnAprendeMas = document.querySelector('.btn-game-footer'); // Botón Abajo (Azul)
+    const overlayAprende = document.getElementById('aprende-overlay'); // El menú flotante
+    
+    // Vistas
+    const viewRetosMain = document.getElementById('retos-main-view');   // Botones grandes
+    const viewRetosSearch = document.getElementById('retos-search-view'); // Nueva galería de imágenes
 
-    // Abrir menú
-    if (btnAprendeMas && overlayAprende) {
-        btnAprendeMas.addEventListener('click', (e) => {
+    // A) Botón ENERGÍA (Arriba) -> Abre el menú flotante (Overlay)
+    if (btnEnergia && overlayAprende) {
+        btnEnergia.addEventListener('click', (e) => {
             e.preventDefault(); 
             overlayAprende.classList.add('active'); 
         });
+    }
 
-        // Cerrar menú al hacer click fuera
+    // B) Botón APRENDE MÁS (Abajo) -> Cambia a la vista de búsqueda/galería
+    if (btnAprendeMas && viewRetosMain && viewRetosSearch) {
+        btnAprendeMas.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // ESTO ES LA CLAVE: Oculta uno, muestra el otro
+            viewRetosMain.style.display = 'none'; 
+            viewRetosSearch.style.display = 'block';
+            
+            if(overlayAprende) overlayAprende.classList.remove('active');
+        });
+    }
+
+    // C) Cerrar el menú flotante al hacer click fuera
+    if (overlayAprende) {
         overlayAprende.addEventListener('click', (e) => {
             if (e.target === overlayAprende || 
                 e.target.classList.contains('close-trigger') || 
                 e.target.classList.contains('overlay-content')) {
-                
                 overlayAprende.classList.remove('active'); 
             }
         });
     }
 
     // ==========================================
-    // 6. LÓGICA DE PANTALLA BUSCAR (NUEVO)
+    // 6. VOLVER AL INICIO (Resetear vista)
     // ==========================================
-    const btnBuscarOverlay = document.querySelector('.btn-cat-buscar'); // Botón verde del menú
-    const viewRetosMain = document.getElementById('retos-main-view');   // Vista de botones
-    const viewRetosSearch = document.getElementById('retos-search-view'); // Vista de búsqueda
     
-    // Botón del sidebar "Retos" (para resetear la vista)
+    // Al hacer click en el botón "Retos" del sidebar, volvemos a la vista original
     const btnSidebarRetos = document.querySelector('.dash-item[data-page="retos"]');
 
     // Al hacer click en "Buscar" dentro del menú overlay
