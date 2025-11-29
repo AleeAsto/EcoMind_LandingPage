@@ -4193,173 +4193,13 @@ body.dashboard-body {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   ESTILOS NUEVOS PARA LA GALERÍA (MASONRY)
-   ========================================= */
-
-/* Contenedor principal de la galería */
-.resources-masonry {
-  column-count: 3; /* 3 columnas */
-  column-gap: 1.5rem;
-  width: 100%;
-  padding-bottom: 2rem;
-}
-
-/* Cada item individual */
-.masonry-item {
-  break-inside: avoid; /* Evita que se corten las imágenes */
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-/* Estilo de las imágenes */
-.masonry-item img {
-  width: 100%;
-  border-radius: 12px;
-  display: block;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.masonry-item img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* Estilo para los videos (Icono Play) */
-.video-card-wrapper {
-    position: relative;
-    cursor: pointer;
-}
-
-.video-card-wrapper:hover img {
-    transform: translateY(-4px);
-}
-
-.play-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    pointer-events: none; /* Para que el click pase a la imagen */
-}
-
-.play-triangle {
-    width: 0; 
-    height: 0; 
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 10px solid #69A44E;
-    margin-left: 3px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .resources-masonry {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .resources-masonry {
-    column-count: 1;
-  }
-}
-
-/* =========================================
-   AJUSTE DE TAMAÑO: EQUILIBRADO (espacios vacios)
-   ========================================= */
-
-/* 1. Contenedor principal: */
-.retos-layout {
-  max-width: 1150px; /* Reducido de 1300px a 1150px */
-  grid-template-columns: 1.4fr 380px;
-  gap: 3rem; /* Espacio un poco más cerrado */
-  padding: 0 2rem;
-  margin: 0 auto; /* Centrado */
-}
-
-/* 2. Columna central */
-.retos-center-col {
-  width: 100%;
-  max-width: 700px; /* Limitamos el ancho de la columna central */
-  margin: 0 auto;
-}
-
-/* 3. Botones de Colores (Iconos) */
-.btn-game-img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0; 
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-game-img img {
-  /* AJUSTE DE TAMAÑO PARA RECTÁNGULOS */
-  width: 100%;      /* Ocupar todo el ancho disponible de la celda */
-  max-width: 360px; /* Aumentamos el tope (antes 240px) para que se vean anchos */
-  height: auto;     /* Mantener la proporción original de la nueva imagen */
-
-  /* EFECTOS MANTENIDOS (Sombra y Transición suave) */
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* EFECTO HOVER MANTENIDO */
-.btn-game-img:hover img {
-  transform: translateY(-6px) scale(1.03); /* Salto y ligero aumento */
-}
-
-/* 4. Botones Texto (Energía / Aprende más) */
-.btn-game-header, 
-.btn-game-footer {
-  width: 90%; /* Que coincida visualmente con el ancho de la cuadrícula de iconos */
-  max-width: 550px; 
-  font-size: 1.35rem; /* Letra un poco más chica */
-  padding: 1rem; /* Menos "gordito" el botón */
-  border-radius: 50px;
-}
-
-/* 5. Separador */
-.dots-separator {
-  font-size: 2.2rem; /* Más discreto */
-  margin: 0.8rem 0;
-  color: #ccc;
-}
-
-/* 6. Ajuste Responsive */
-@media (max-width: 1000px) {
-  .retos-layout {
-    grid-template-columns: 1fr; 
-    max-width: 600px;
-    gap: 2rem;
-  }
-  
-  .retos-right-col {
-    width: 100%;
-    flex-direction: row;
-  }
-}
-
 /* =========================================================
    VISTA DE ACTIVIDAD (¡HORA DE AHORRAR ENERGÍA!)
    ========================================================= */
 
 :root {
-  --azul-actividad: #4c8dff;
-  --azul-actividad-oscuro: #2f6fe0;
+  --azul-actividad: #74a7ff;
+  --azul-actividad-oscuro: #4d89f2;
   --tag-amarillo: #ffc940;
   --tag-gris: #e0e0e0;
 }
@@ -4380,41 +4220,32 @@ body.dashboard-body {
 
 /* Header: “ACTIVIDAD (GRUPAL)” + volver */
 .actividad-header {
-  width: 100%;
-  padding: 0.5rem 0;
-  display: flex;
-  align-items: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
 }
 
 .btn-volver-retos {
-  border: none;
-  background: transparent;
-  color: #777;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0;
 }
 
 .btn-volver-retos::before {
-  content: "←";
-  font-size: 1rem;
+    content: "←";
+    font-size: 1rem;
 }
 
 .btn-volver-retos:hover {
-  color: #444;
-}
-
-.actividad-titulo-top {
-  margin: 0;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #7f7f7f;
+    color: #444;
 }
 
 /* Layout interno: contenido izquierda + sidebar derecha */
@@ -4605,6 +4436,13 @@ body.dashboard-body {
   transform: translateY(1px);
 }
 
+.btn-invitar.invited {
+  background: #d3d3d3 !important;
+  color: #888 !important;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Select de participantes */
 .select-participantes {
   margin-top: 0.2rem;
@@ -4640,6 +4478,79 @@ body.dashboard-body {
   .actividad-sidebar {
     max-width: 360px;
     margin: 0 auto;
+/* =========================================
+   ESTILOS NUEVOS PARA LA GALERÍA (MASONRY)
+   ========================================= */
+
+/* Contenedor principal de la galería */
+.resources-masonry {
+  column-count: 3; /* 3 columnas */
+  column-gap: 1.5rem;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+/* Cada item individual */
+.masonry-item {
+  break-inside: avoid; /* Evita que se corten las imágenes */
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+/* Estilo de las imágenes */
+.masonry-item img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.masonry-item img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Estilo para los videos (Icono Play) */
+.video-card-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.video-card-wrapper:hover img {
+    transform: translateY(-4px);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    pointer-events: none; /* Para que el click pase a la imagen */
+}
+
+.play-triangle {
+    width: 0; 
+    height: 0; 
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #69A44E;
+    margin-left: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .resources-masonry {
+    column-count: 2;
   }
 }
 
@@ -4805,13 +4716,6 @@ body.dashboard-body {
   .activity-sidebar{
     width: 100%;
   }
-}
-
-.btn-invitar.invited {
-  background: #d3d3d3 !important;
-  color: #888 !important;
-  cursor: default;
-  pointer-events: none;
 }
 
 /* ========================================= */
@@ -4991,4 +4895,152 @@ body.dashboard-body {
   max-width: 900px;      /* aquí ajustas qué tan ancho quieres el contenido */
   margin: 0 auto;
   padding: 1.5rem 1rem 2rem;
+}
+  .resources-masonry {
+    column-count: 1;
+  }
+}
+}
+/* =========================================
+   ----------------Ranking------------------
+   ========================================= */
+    .dash-page #page-ranking .active {
+    display: flex !important;
+    justify-content: center;
+    padding-top: 0.8rem;
+    }
+    #page-ranking .ranking-content-wrapper {
+    width: 100%;
+    max-width: 850px;
+    margin-left: 35rem;
+    margin-bottom: none;
+    }
+    #page-ranking { padding: 1.2rem; }
+    #page-ranking .ranking-card {
+      max-width: 640px;
+      margin: 0.8rem 0 2rem 0;
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      font-family: 'Poppins', sans-serif;
+    }
+    #page-ranking .ranking-header { text-align: center; margin-bottom: 0.6rem; }
+    #page-ranking .trophy-icon { font-size: 5.2rem; display: flex; justify-content:center; margin-right: 10.6rem; }
+
+    #page-ranking .top-global-title {
+      display:flex; align-items:center; justify-content:space-between; gap:8px;
+      margin-bottom: 0.8rem; padding-bottom:0.6rem; border-bottom:1px solid #eee;
+    }
+    #page-ranking .top-global-title h2 { margin:0; color:#2f6b2f; font-size:1.3rem; }
+    #page-ranking .arrow-nav {
+      background:none; border:1px solid #e6f3e6; padding:6px 10px; border-radius:8px;
+      cursor:pointer; color:#3a7a28;
+    }
+
+    /* Lista */
+    #page-ranking .ranking-list { list-style: none; margin:0; padding:0; }
+    #page-ranking .ranking-list li {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 12px; border-radius:12px; margin-bottom:8px;
+      background:#fbfbfb; border:1px solid #f0f0f0;
+    }
+    #page-ranking .ranking-item-left { display:flex; align-items:center; gap:10px; }
+    #page-ranking .medal { font-size:1.4rem; min-width:30px; }
+    #page-ranking .score { color:#69A44E; font-weight:700; min-width:60px; text-align:right; }
+    #page-ranking .ranking-list li:nth-child(1),
+    #page-ranking .ranking-list li:nth-child(2),
+    #page-ranking .ranking-list li:nth-child(3) {
+    background: #e6f8e6;  
+    border: 1px solid #b6e5b6;
+}
+    /* puesto del usuario */
+    #page-ranking .user-separator { text-align:center; margin-top:14px; font-weight:700; color:#69A44E; }
+    #page-ranking .user-rank { display:flex; justify-content:space-between; padding:10px 12px; margin-top:8px; background:linear-gradient(90deg,#e9f7e9,#f6fff6); border-radius:10px; }
+    /* Responsive */
+    @media (max-width:720px) {
+      #page-ranking .ranking-card{ padding:0.9rem; }
+      #page-ranking .top-global-title h2{ font-size:1.05rem; }
+      #page-ranking .trophy-icon{ font-size:2.6rem; }
+      #page-ranking .ranking-list li{ flex-direction:column; align-items:flex-start; gap:6px; }
+      #page-ranking .score{ align-self:flex-end; }
+    }
+ 
+
+/* =========================================
+   AJUSTE DE TAMAÑO: EQUILIBRADO (espacios vacios)
+   ========================================= */
+
+/* 1. Contenedor principal: */
+.retos-layout {
+  max-width: 1150px; /* Reducido de 1300px a 1150px */
+  grid-template-columns: 1.4fr 380px;
+  gap: 3rem; /* Espacio un poco más cerrado */
+  padding: 0 2rem;
+  margin: 0 auto; /* Centrado */
+}
+
+/* 2. Columna central */
+.retos-center-col {
+  width: 100%;
+  max-width: 700px; /* Limitamos el ancho de la columna central */
+  margin: 0 auto;
+}
+
+/* 3. Botones de Colores (Iconos) */
+.btn-game-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0; 
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-game-img img {
+  /* AJUSTE DE TAMAÑO PARA RECTÁNGULOS */
+  width: 100%;      /* Ocupar todo el ancho disponible de la celda */
+  max-width: 360px; /* Aumentamos el tope (antes 240px) para que se vean anchos */
+  height: auto;     /* Mantener la proporción original de la nueva imagen */
+
+  /* EFECTOS MANTENIDOS (Sombra y Transición suave) */
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* EFECTO HOVER MANTENIDO */
+.btn-game-img:hover img {
+  transform: translateY(-6px) scale(1.03); /* Salto y ligero aumento */
+}
+
+/* 4. Botones Texto (Energía / Aprende más) */
+.btn-game-header, 
+.btn-game-footer {
+  width: 90%; /* Que coincida visualmente con el ancho de la cuadrícula de iconos */
+  max-width: 550px; 
+  font-size: 1.35rem; /* Letra un poco más chica */
+  padding: 1rem; /* Menos "gordito" el botón */
+  border-radius: 50px;
+}
+
+/* 5. Separador */
+.dots-separator {
+  font-size: 2.2rem; /* Más discreto */
+  margin: 0.8rem 0;
+  color: #ccc;
+}
+
+/* 6. Ajuste Responsive */
+@media (max-width: 1000px) {
+  .retos-layout {
+    grid-template-columns: 1fr; 
+    max-width: 600px;
+    gap: 2rem;
+  }
+  
+  .retos-right-col {
+    width: 100%;
+    flex-direction: row;
+  }
 }

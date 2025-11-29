@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Página inicial por defecto
-    showPage('retos');
-
+    showPage('reto');
 
     // ==========================================
     // 2. PESTAÑAS DEL PERFIL
