@@ -421,13 +421,13 @@
     <div id="actividad-screen-instrucciones" class="actividad-screen">
       <div class="actividad-instrucciones-inner">
         <div class="actividad-header">
-        <button class="btn-volver-retos">Volver</button>
+          <button class="btn-volver-retos">Volver</button>
         </div>
         <h1 class="instr-title">Hora de ahorrar energía!</h1>
 
         <div class="instr-step">
           <label class="instr-check">
-            <input type="checkbox">
+            <input type="checkbox" class="instr-checkbox">
             <span>Apaga las luces 1 hora</span>
           </label>
           <div class="instr-evidencia-box">
@@ -437,7 +437,7 @@
 
         <div class="instr-step">
           <label class="instr-check">
-            <input type="checkbox">
+            <input type="checkbox" class="instr-checkbox">
             <span>Suspende el dispositivo 1 hora</span>
           </label>
           <p class="instr-progress-text">Progreso: 30 minutos / 60 minutos</p>
@@ -447,12 +447,30 @@
         </div>
 
         <img src="assets/images/actividad/terranini_feliz.png"
-             alt="Mundo EcoMind animando"
-             class="instr-mascota-img">
+            alt="Mundo EcoMind animando"
+            class="instr-mascota-img">
 
-        <button class="instr-completar-btn">Completar</button>
+        <button class="instr-completar-btn" id="btn-completar-actividad">
+          Completar actividad
+        </button>
       </div>
     </div>
+
+    <div id="actividad-screen-completada" class="actividad-screen">
+    <div class="exito-container">
+      <h2 class="exito-title">¡Completaste la actividad!</h2>
+
+      <img src="assets/images/actividad/globilini_feliz.png"
+          alt="EcoMind celebrando"
+          class="exito-img">
+
+      <p class="exito-points">+50 ecoPoints</p>
+
+      <button id="btn-actividad-continuar" class="btn-continuar-exito">
+        Continuar
+      </button>
+    </div>
+  </div>
 
   </div>
 </div>

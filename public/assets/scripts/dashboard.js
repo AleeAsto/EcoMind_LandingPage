@@ -291,7 +291,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================
 
     const actividadView = document.getElementById('retos-actividad-view');
-    const btnVolverRetos = document.getElementById('btn-volver-retos');
     const primerRetoBtn = document.querySelector('.game-grid .btn-game-img');
 
      if (primerRetoBtn && actividadView && viewRetosMain) {
@@ -319,7 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const screenDetalle = document.getElementById('actividad-screen-detalle');
     const screenYay = document.getElementById('actividad-screen-yay');
     const screenInstr = document.getElementById('actividad-screen-instrucciones');
-    const btnIniciarActividad = document.getElementById('btn-iniciar-actividad');
 
     function cambiarPantallaActividad(nombre) {
         const screens = {
@@ -388,10 +386,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const volverBtn = event.target.closest('.btn-volver-retos');
       if (!volverBtn) return; // si no es un botón de volver, no hacemos nada
 
-    const actividadView   = document.getElementById('retos-actividad-view');
+      const actividadView   = document.getElementById('retos-actividad-view');
       const viewRetosMain   = document.getElementById('retos-main-view');
       const viewRetosSearch = document.getElementById('retos-search-view');
-  if (actividadView)   actividadView.style.display = 'none';
+      if (actividadView)   actividadView.style.display = 'none';
       if (viewRetosMain)   viewRetosMain.style.display   = 'grid';
       if (viewRetosSearch) viewRetosSearch.style.display = 'none';
       if (typeof cambiarPantallaActividad === 'function') {
@@ -602,7 +600,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
-  const botonesContinuarExito = document.querySelectorAll('.btn-continuar-exito');
+  const botonesContinuarExito = document.querySelectorAll(
+  '#page-exito-individual .btn-continuar-exito, #page-exito-familia .btn-continuar-exito'
+);
+
   botonesContinuarExito.forEach(btn => {
     btn.addEventListener('click', () => {
       if(pageExitoIndividual) pageExitoIndividual.classList.remove('active');
@@ -629,3 +630,83 @@ document.addEventListener('DOMContentLoaded', function() {
       btnClose.style.backgroundColor = "#FF5555";
     }
   }
+
+  // Helper para cambiar entre las pantallas de actividad
+function setActividadScreen(screenId) {
+  document.querySelectorAll('#retos-actividad-view .actividad-screen')
+    .forEach(s => s.classList.remove('active'));
+
+  const target = document.getElementById(screenId);
+  if (target) target.classList.add('active');
+}
+
+// ========= LÓGICA DE INICIAR ACTIVIDAD =========
+// Botón "Iniciar Actividad" (pantalla detalle -> YAY -> instrucciones)
+const btnIniciarActividad = document.getElementById('btn-iniciar-actividad');
+
+if (btnIniciarActividad) {
+  btnIniciarActividad.addEventListener('click', () => {
+    // Pantalla 2: YAY
+    setActividadScreen('actividad-screen-yay');
+
+    // Después de 1.2s pasamos a instrucciones
+    setTimeout(() => {
+      setActividadScreen('actividad-screen-instrucciones');
+    }, 1200);
+  });
+}
+
+// ========= LÓGICA DE CHECKBOXES EN INSTRUCCIONES =========
+const instrScreen    = document.getElementById('actividad-screen-instrucciones');
+const completarBtn   = document.getElementById('btn-completar-actividad');
+const stepCheckboxes = instrScreen
+  ? instrScreen.querySelectorAll('.instr-checkbox')
+  : [];
+
+function actualizarEstadoBotonActividad() {
+  if (!completarBtn || stepCheckboxes.length === 0) return;
+
+  const todosMarcados = Array.from(stepCheckboxes).every(cb => cb.checked);
+
+  completarBtn.disabled = !todosMarcados;
+  completarBtn.classList.toggle('active', todosMarcados);
+}
+
+// Escuchamos cambios en los checks
+stepCheckboxes.forEach(cb => {
+  cb.addEventListener('change', actualizarEstadoBotonActividad);
+});
+
+// Estado inicial al cargar
+actualizarEstadoBotonActividad();
+
+// ========= CLICK EN "COMPLETAR ACTIVIDAD" =========
+if (completarBtn) {
+  completarBtn.addEventListener('click', () => {
+    // Si aún está desactivado, no hace nada
+    if (completarBtn.disabled) return;
+
+    // Ir a pantalla de felicitación
+    setActividadScreen('actividad-screen-completada');
+  });
+}
+
+// ========= BOTÓN "CONTINUAR" (volver a Retos) =========
+const btnActividadContinuar = document.getElementById('btn-actividad-continuar');
+
+if (btnActividadContinuar) {
+  btnActividadContinuar.addEventListener('click', () => {
+    setActividadScreen('actividad-screen-detalle');
+    // Ocultamos la vista de actividad
+    const actividadView   = document.getElementById('retos-actividad-view');
+    const viewRetosMain   = document.getElementById('retos-main-view');
+    const viewRetosSearch = document.getElementById('retos-search-view');
+    if (actividadView)   actividadView.style.display = 'none';
+    if (viewRetosMain)   viewRetosMain.style.display   = 'grid';
+    if (viewRetosSearch) viewRetosSearch.style.display = 'none';
+    if (typeof cambiarPantallaActividad === 'function') {
+      cambiarPantallaActividad('detalle');}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
