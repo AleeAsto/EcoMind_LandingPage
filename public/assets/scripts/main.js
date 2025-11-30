@@ -235,6 +235,32 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
     }
+
+        // --- 6. LÓGICA DEL FORMULARIO SIGN IN (NUEVO) ---
+    const signinForm = document.getElementById('signinForm');
+    if (signinForm) {
+        signinForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = this.querySelector('input[name="email"]').value.trim();
+            const password = this.querySelector('input[name="password"]').value.trim();
+
+            const validEmail = "marcos@gmail.com"; // email válido
+            const validPassword = "123";           // contraseña válida
+
+            // Comparamos en minúsculas para no depender de mayúsculas en el correo
+            if (email.toLowerCase() === validEmail && password === validPassword) {
+                // Opcional: guardar el nombre para usarlo en el dashboard
+                // localStorage.setItem('ecomind_user', 'Marcos');
+
+                // Ir al dashboard
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Correo o contraseña incorrectos.");
+            }
+        });
+    }
+
     
     // --- 6. BOTONES SOCIALES Y SIGN IN (ORIGINAL) ---
     const btnGoogle = document.querySelector('.btn-google');

@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>EcoMind - Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="assets/styles/styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+
+<body class="dashboard-body">
+  <!-- HEADER SUPERIOR (logo + usuario) -->
+  <header class="app-header">
+    <div class="app-header-inner">
+      <div class="app-header-left">
+        <img src="assets/images/ecomind_logo.png" alt="EcoMind" class="app-logo">
+      </div>
+      <div class="app-header-right">
+        <span class="dash-username">Marcos</span>
+        <img src="assets/images/avatar.png" alt="Avatar" class="dash-avatar">
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL: SIDEBAR + CONTENIDO -->
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+      <nav class="dash-menu">
+        <button class="dash-item" data-page="perfil">Perfil</button>
+        <button class="dash-item active" data-page="retos">Retos</button>
+        <button class="dash-item" data-page="comunidad">Comunidad</button>
+        <button class="dash-item" data-page="ranking">Ranking</button>
+        <button class="dash-item" data-page="ajustes">Ajustes</button>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="dash-main">
+
+<!-- =============== PÁGINA RANKING ================= -->
+<div id="page-ranking" class="dash-page">
+
+  <div class="ranking-content-wrapper">
+
+    <!-- Encabezado del Ranking -->
+    <div class="ranking-header">
+      <div class="trophy-icon">🏆</div>
+    </div>
+
+    <!-- Tarjeta del Ranking -->
+    <div class="ranking-card">
+
+      <!-- Título -->
+      <div class="top-global-title">
+        <button class="arrow-nav">&lt;</button>
+        <h2>Ranking</h2>
+        <button class="arrow-nav">&gt;</button>
+      </div>
+
+      <!-- Lista del Top 10 -->
+      <section id="leaderboard">
+        <ol class="ranking-list">
+
+          <li>
+            <div class="ranking-item-left">
+              <span class="medal">🥇</span>
+              <strong>TomiFlash</strong>
+            </div>
+            <span class="score">9800</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <span class="medal">🥈</span>
+              <strong>LauPop</strong>
+            </div>
+            <span class="score">9200</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <span class="medal">🥉</span>
+              <strong>LunaBrillita</strong>
+            </div>
+            <span class="score">9000</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>4. NatiPlay</strong>
+            </div>
+            <span class="score">8900</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>5. LuliCraft</strong>
+            </div>
+            <span class="score">8850</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>6. MaxiGamer</strong>
+            </div>
+            <span class="score">8050</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>7. MiniAlex</strong>
+            </div>
+            <span class="score">7990</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>8. NicoXD</strong>
+            </div>
+            <span class="score">7520</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>9. TomiPlayz</strong>
+            </div>
+            <span class="score">7210</span>
+          </li>
+
+          <li>
+            <div class="ranking-item-left">
+              <strong>10. SoftStar</strong>
+            </div>
+            <span class="score">7100</span>
+          </li>
+
+        </ol>
+      </section>
+
+      <!-- Separador -->
+      <div class="user-separator">Tu puesto</div>
+
+      <!-- Puesto del usuario -->
+      <p class="user-rank">
+        <strong>220. MarquitosElReciclador777</strong>
+        <span class="score">200</span>
+      </p>
+
+    </div> <!-- ranking-card -->
+
+  </div> <!-- ranking-content-wrapper -->
+
+</div>
+<!-- =============== FIN PÁGINA RANKING =============== -->
+
+
+      <section class="dash-pages">
+        <!-- RETOS -->
+        <div id="page-retos" class="dash-page active">
+  
+  <div id="retos-main-view" class="retos-layout">
+    
+    <div class="retos-center-col">
+      <button class="btn-game-header">
+        Energía 
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M12 7v5"/><path d="M12 13v0"/><path d="M16.5 7.5a4.95 4.95 0 0 0-7 0"/><path d="M18.8 5.2a8.5 8.5 0 0 0-13.6 0"/></svg>
+      </button>
+
+      <div class="game-grid">
+        <button class="btn-game-img"><img src="assets/images/retos/Btn1.png" alt="Reto Escritura"></button>
+        <button class="btn-game-img"><img src="assets/images/retos/Btn2.png" alt="Reto Puzzle"></button>
+        <button class="btn-game-img"><img src="assets/images/retos/Btn3.png" alt="Reto Acción"></button>
+        <button class="btn-game-img"><img src="assets/images/retos/Btn5.png" alt="Reto Video"></button>
+      </div>
+
+      <div class="dots-separator">•••</div>
+
+      <button class="btn-game-footer">
+        Aprende mas 
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </button>
+
+      <div id="aprende-overlay" class="overlay-container">
+        <div class="overlay-content">
+          <button class="btn-category btn-cat-energia">Energía <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2v1"/><path d="M12 7v5"/><path d="M12 13v0"/><path d="M16.5 7.5a4.95 4.95 0 0 0-7 0"/><path d="M18.8 5.2a8.5 8.5 0 0 0-13.6 0"/></svg></button>
+          <button class="btn-category btn-cat-agua">Agua <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></button>
+          <button class="btn-category btn-cat-reciclaje">Reciclaje <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></button>
+          <button class="btn-category btn-cat-reto">Reto diario <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke="white" fill="none"/><polygon points="10 8 16 12 10 16 10 8" fill="white" stroke="white"/></svg></button>
+          <button class="btn-category btn-cat-buscar">Buscar <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          <div class="close-trigger" id="close-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="retos-right-col">
+      <div class="widget-card racha-widget">
+        <h3>Racha</h3>
+        <div class="racha-display">
+          <img src="assets/images/plant.png" alt="Planta" class="racha-icon-small">
+          <span class="racha-val">16</span>
+        </div>
+        <div class="divider-line"></div>
+        <div class="ranking-display">
+          <span class="trophy">🏆</span> Puesto 220
+        </div>
+      </div>
+
+      <div class="widget-card progreso-widget">
+        <div class="progreso-pill">Progreso</div>
+        <div class="progreso-list">
+          <div class="progreso-item">
+            <div class="p-info"><span>Reto diario</span></div>
+            <div class="p-bar-bg"><div class="p-bar-fill" style="width: 65%;"></div></div>
+          </div>
+          <div class="progreso-item">
+            <div class="p-info"><span>Lectura de cuidado de energia 1</span></div>
+            <div class="p-bar-bg"><div class="p-bar-fill" style="width: 30%;"></div></div>
+          </div>
+          <div class="progreso-item">
+            <div class="p-info"><span>Actividad familiar 1</span></div>
+            <div class="p-bar-bg"><div class="p-bar-fill" style="width: 55%;"></div></div>
+          </div>
+          <div class="progreso-item">
+            <div class="p-info"><span>Almacena 4 pilas usadas</span></div>
+            <div class="p-bar-bg"><div class="p-bar-fill" style="width: 25%;"></div></div>
+          </div>
+        </div>
+        <button class="btn-ver-mas-small">Ver mas</button>
+      </div>
+    </div>
+  </div> 
+  <div id="retos-search-view" class="retos-search-layout" style="display: none;">
+    
+    <div class="search-bar-container">
+      <div class="search-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </div>
+      <input type="text" class="search-input" placeholder="Hinted search text">
+      <div class="search-icon-right">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </div>
+    </div>
+
+    <div class="search-tags-container">
+      <button class="search-tag tag-yellow">energia <span class="tag-close">⛌</span></button>
+      <button class="search-tag tag-green">Infografías <span class="tag-close">⛌</span></button>
+      <button class="search-tag tag-green">Lecturas <span class="tag-close">⛌</span></button>
+      <button class="search-tag tag-green">Videos <span class="tag-close">⛌</span></button>
+    </div>
+
+    <div class="resources-masonry">
+      <div class="masonry-item"><img src="assets/images/retos/imagen1.png" alt="Tips"></div>
+      <div class="masonry-item"><img src="assets/images/retos/imagen4.png" alt="Lectura"></div>
+      <div class="masonry-item"><img src="assets/images/retos/imagen10.png" alt="Infografia"></div>
+
+      <div class="masonry-item"><img src="assets/images/retos/imagen2.png" alt="Ahorro"></div>
+      <div class="masonry-item"><img src="assets/images/retos/imagen5.png" alt="Libro"></div>
+      <div class="masonry-item"><img src="assets/images/retos/imagen11.png" alt="Energia"></div>
+      
+      <div class="masonry-item">
+        <div class="video-card-wrapper">
+            <img src="assets/images/retos/imagen3.png" alt="Video">
+            <div class="play-overlay"><div class="play-triangle"></div></div>
+        </div>
+      </div>
+      <div class="masonry-item"><img src="assets/images/retos/imagen6.png" alt="Info"></div>
+      <div class="masonry-item">
+        <div class="video-card-wrapper">
+            <img src="assets/images/retos/imagen7.png" alt="Video">
+            <div class="play-overlay"><div class="play-triangle"></div></div>
+        </div>
+      </div>
+      <div class="masonry-item"><img src="assets/images/retos/imagen9.png" alt="Info"></div>
+       <div class="masonry-item">
+        <div class="video-card-wrapper">
+            <img src="assets/images/retos/imagen8.png" alt="Video">
+            <div class="play-overlay"><div class="play-triangle"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVIDAD -->
+<div id="retos-actividad-view" class="actividad-layout" style="display:none;">
+
+  <div class="actividad-wrapper">
+    <!-- PANTALLA 1: DETALLE DE LA ACTIVIDAD -->
+    <div id="actividad-screen-detalle" class="actividad-screen active">
+
+      <div class="actividad-header">
+        <button class="btn-volver-retos">Volver</button>
+      </div>
+
+      <div class="actividad-container">
+        <!-- Columna izquierda -->
+        <div class="actividad-info">
+          <h1 class="actividad-titulo">¡Hora de ahorrar energía!</h1>
+
+          <div class="actividad-tags">
+            <span class="tag">energía</span>
+            <span class="tag">+10 años</span>
+            <span class="tag">60 min</span>
+            <span class="tag verde">50 ecoPoints</span>
+          </div>
+
+          <p class="actividad-descripcion">
+            Apagaremos las luces y desconectaremos los aparatos que no usemos,
+            aprendiendo cómo pequeños gestos pueden proteger nuestro planeta.
+          </p>
+
+          <img src="assets/images/actividad/actividad_energia.png" class="actividad-img" alt="Actividad energía">
+
+          <button class="btn-iniciar-actividad" id="btn-iniciar-actividad">
+            Iniciar Actividad
+          </button>
+        </div>
+
+        <!-- Columna derecha: Invitar amigos / Participantes -->
+        <div class="activity-sidebar">
+
+          <!-- TARJETA INVITAR AMIGOS -->
+          <div class="activity-card">
+            <button class="activity-card-header js-activity-toggle is-open">
+              <span class="activity-card-title">INVITAR AMIGOS</span>
+              <span class="activity-chevron">˄</span>
+            </button>
+
+            <div class="activity-card-body">
+              <!-- barra de búsqueda -->
+              <div class="activity-search">
+                <button class="activity-search-menu">
+                  <img src="assets/icons/menu-lines.svg" alt="">
+                </button>
+                <input type="text" placeholder="Buscar" />
+                <button class="activity-search-icon">
+                  <img src="assets/icons/search.svg" alt="">
+                </button>
+              </div>
+
+              <!-- lista de amigos -->
+              <ul class="friends-list">
+                <li class="friend-row">
+                  <img src="assets/images/amigos/cami.png" class="friend-avatar" alt="">
+                  <span class="friend-name">CamiSky</span>
+                  <button class="btn-invitar">Invitar</button>
+                </li>
+                <li class="friend-row">
+                  <img src="assets/images/amigos/mateo.png" class="friend-avatar" alt="">
+                  <span class="friend-name">MateoRun</span>
+                  <button class="btn-invitar">Invitar</button>
+                </li>
+                <li class="friend-row">
+                  <img src="assets/images/amigos/alex.png" class="friend-avatar" alt="">
+                  <span class="friend-name">AlexNova</span>
+                  <button class="btn-invitar">Invitar</button>
+                </li>
+                <li class="friend-row">
+                  <img src="assets/images/amigos/rafa.png" class="friend-avatar" alt="">
+                  <span class="friend-name">RafaLuz</span>
+                  <button class="btn-invitar">Invitar</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- TARJETA PARTICIPANTES -->
+          <div class="activity-card">
+            <button class="activity-card-header js-activity-toggle">
+              <span class="activity-card-title">Participantes</span>
+              <span class="activity-chevron">˅</span>
+            </button>
+
+            <div class="activity-card-body participants-body is-hidden">
+              <ul class="participants-list">
+                <li class="participant-row">
+                  <img src="assets/images/avatar.png" class="friend-avatar" alt="">
+                  <div class="participant-info">
+                    <span class="friend-name">Marcos</span>
+                  </div>
+                  <span class="participant-role">Organizador</span>
+                </li>
+
+                <li class="participant-row">
+                  <img src="assets/images/amigos/cami.png" class="friend-avatar" alt="">
+                  <div class="participant-info">
+                    <span class="friend-name">CamiSky</span>
+                  </div>
+                  <span class="participant-role">Eliminar</span>
+                </li>
+
+                <li class="participant-row participant-pending">
+                  <img src="assets/images/amigos/rafa.png" class="friend-avatar" alt="">
+                  <div class="participant-info">
+                    <span class="friend-name">RafaLuz</span>
+                    <span class="participant-status">Esperando confirmación</span>
+                  </div>
+                  <span class="participant-role">Eliminar</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div> <!-- /.activity-sidebar -->
+      </div> <!-- /.actividad-container -->
+    </div> <!-- /screen detalle -->
+
+    <!-- PANTALLA 2: YAY / TRANSICIÓN -->
+    <div id="actividad-screen-yay" class="actividad-screen">
+      <div class="actividad-yay-inner">
+        <p class="actividad-yay-text">¡Iniciaste una actividad!</p>
+        <img src="assets/images/actividad/terranini_corre.png"
+             alt="Terranini_globilini_corriendo"
+             class="actividad-yay-img">
+      </div>
+    </div>
+
+    <!-- PANTALLA 3: INSTRUCCIONES -->
+    <div id="actividad-screen-instrucciones" class="actividad-screen">
+      <div class="actividad-instrucciones-inner">
+        <div class="actividad-header">
+          <button class="btn-volver-retos">Volver</button>
+        </div>
+        <h1 class="instr-title">Hora de ahorrar energía!</h1>
+
+        <div class="instr-step">
+          <label class="instr-check">
+            <input type="checkbox" class="instr-checkbox">
+            <span>Apaga las luces 1 hora</span>
+          </label>
+          <div class="instr-evidencia-box">
+            Adjunte evidencia 📎
+          </div>
+        </div>
+
+        <div class="instr-step">
+          <label class="instr-check">
+            <input type="checkbox" class="instr-checkbox">
+            <span>Suspende el dispositivo 1 hora</span>
+          </label>
+          <p class="instr-progress-text">Progreso: 30 minutos / 60 minutos</p>
+          <div class="instr-progress-bar">
+            <div class="instr-progress-fill" style="width:50%;"></div>
+          </div>
+        </div>
+
+        <img src="assets/images/actividad/terranini_feliz.png"
+            alt="Mundo EcoMind animando"
+            class="instr-mascota-img">
+
+        <button class="instr-completar-btn" id="btn-completar-actividad">
+          Completar actividad
+        </button>
+      </div>
+    </div>
+
+    <div id="actividad-screen-completada" class="actividad-screen">
+    <div class="exito-container">
+      <h2 class="exito-title">¡Completaste la actividad!</h2>
+
+      <img src="assets/images/actividad/globilini_feliz.png"
+          alt="EcoMind celebrando"
+          class="exito-img">
+
+      <p class="exito-points">+50 ecoPoints</p>
+
+      <button id="btn-actividad-continuar" class="btn-continuar-exito">
+        Continuar
+      </button>
+    </div>
+  </div>
+
+  </div>
+</div>
+<!-- FIN ACTIVIDAD -->
+
+ </div>
+        <!-- COMUNIDAD -->
+<div id="page-comunidad" class="dash-page">
+          <div class="comunidad-layout">
+            
+            <div class="search-bar-container">
+              <button class="search-menu-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+              </button>
+              <input type="text" placeholder="Hinted search text" class="search-input">
+              <button class="search-icon-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </button>
+            </div>
+
+            <div class="comunidad-feed">
+              
+              <div class="feed-card">
+                <div class="feed-card-avatar-container">
+                  <img src="assets/images/comunidad/minialex.jpg" alt="MiniAlex" class="feed-avatar">
+                </div>
+                <div class="feed-card-content">
+                  <div class="feed-header">
+                    <h3 class="feed-username">MiniAlex</h3>
+                  </div>
+                  <p class="feed-text">Consiguió sus primeros 2000 ecoPoints</p>
+                  <span class="feed-time">Ahora mismo</span>
+                </div>
+              </div>
+
+              <div class="feed-card">
+                <div class="feed-card-avatar-container">
+                  <img src="assets/images/comunidad/tomiflash.png" alt="TomiFlash" class="feed-avatar">
+                </div>
+                <div class="feed-card-content">
+                  <div class="feed-header">
+                    <h3 class="feed-username">TomiFlash</h3>
+                  </div>
+                  <p class="feed-text">Ha creado el evento “Limpiar la playa”</p>
+                  
+                  <div class="feed-actions-row">
+                    <span class="feed-time">Ayer</span>
+                    <button class="btn-unirse-evento">Unirse al evento</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feed-card">
+                <div class="feed-card-avatar-container">
+                  <img src="assets/images/comunidad/lunabrillita.png" alt="LunaBrillita" class="feed-avatar">
+                </div>
+                <div class="feed-card-content">
+                  <div class="feed-header">
+                    <h3 class="feed-username">LunaBrillita</h3>
+                  </div>
+                  <p class="feed-text">Se ha unido a la comunidad</p>
+                  <span class="feed-time">Hace 2d</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="comunidad-bottom-actions">
+              <button class="action-big-btn">
+                <img src="assets/images/comunidad/logros.png" alt="Logros" class="action-btn-icon">
+                <span>Logros</span>
+              </button>
+              <button class="action-big-btn">
+                <img src="assets/images/comunidad/eventos.png" alt="Eventos" class="action-btn-icon">
+                <span>Eventos</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="page-comunidad-logros" class="dash-page">
+          <div class="comunidad-layout">
+            
+            <h2 class="comunidad-page-title">Logros de la comunidad</h2>
+
+            <div class="logros-list">
+              
+              <div class="logro-card">
+                <div class="logro-icon-container">
+                  <img src="assets/images/comunidad/logros.png" alt="Medalla" class="logro-icon">
+                </div>
+                <div class="logro-info">
+                  <h4 class="logro-title">LOGRO COMUNITARIO</h4>
+                  <p class="logro-desc">¡Mas de 500 miembros!</p>
+                </div>
+              </div>
+
+              <div class="logro-card">
+                <div class="logro-icon-container">
+                  <img src="assets/images/comunidad/trofeo.png" alt="Trofeo" class="logro-icon">
+                </div>
+                <div class="logro-info">
+                  <h4 class="logro-title">Familia Flores</h4>
+                  <p class="logro-desc">Completo su primer proyecto familiar</p>
+                </div>
+              </div>
+
+              <div class="logro-card">
+                <div class="logro-icon-container">
+                  <img src="assets/images/comunidad/logros.png" alt="Medalla" class="logro-icon">
+                </div>
+                <div class="logro-info">
+                  <h4 class="logro-title">Mickey Mouse 12</h4>
+                  <p class="logro-desc">Lleva una racha de 30 dias!</p>
+                </div>
+              </div>
+
+              <div class="logro-card">
+                <div class="logro-icon-container">
+                  <img src="assets/images/comunidad/logros.png" alt="Medalla" class="logro-icon">
+                </div>
+                <div class="logro-info">
+                  <h4 class="logro-title">Ulices Torres</h4>
+                  <p class="logro-desc">Participo en su primer evento de comunidad</p>
+                </div>
+              </div>
+
+              <div class="logro-card">
+                <div class="logro-icon-container">
+                  <img src="assets/images/comunidad/trofeo.png" alt="Trofeo" class="logro-icon">
+                </div>
+                <div class="logro-info">
+                  <h4 class="logro-title">Familia Gonzales</h4>
+                  <p class="logro-desc">Completaron 3 proyectos familiares en la semana</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div id="page-comunidad-eventos" class="dash-page">
+          <div class="comunidad-layout">
+            
+            <div class="eventos-top-bar">
+              <div class="search-bar-container full-width-search">
+                <button class="search-menu-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <input type="text" placeholder="Hinted search text" class="search-input">
+                <button class="search-icon-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+              </div>
+              
+              <button class="btn-crear-evento">
+                <span class="plus-icon">+</span> Crear evento
+              </button>
+            </div>
+
+            <div class="eventos-grid">
+              
+              <div class="evento-card" data-fecha="26 de octubre - 2 pm" data-lugar="Parque central">
+                <div class="evento-info">
+                  <div class="evento-header-row">
+                    <div class="evento-text-col">
+                      <h4 class="evento-title">Recolección de basura</h4>
+                      <p class="evento-desc">Nos reuniremos en el parque central para recoger residuos y limpiar las áreas verdes el sábado 26 de octubre</p>
+                    </div>
+                    <img src="assets/images/comunidad/recoleccionbasura.jpg" alt="Recolección" class="evento-img">
+                  </div>
+                  
+                  <div class="evento-actions">
+                    <button class="btn-evento-estado unido" style="background-color: #C4C4C4;">Ya te uniste</button>
+                    <button class="btn-evento-close red" style="background-color: #FF5555;">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="evento-card" data-fecha="2 de noviembre - 11 am" data-lugar="Playa San Miguel">
+                <div class="evento-info">
+                  <div class="evento-header-row">
+                    <div class="evento-text-col">
+                      <h4 class="evento-title">Limpieza de playa</h4>
+                      <p class="evento-desc">Nos reuniremos en la playa San Miguel para retirar plásticos y desechos el sábado 2 de noviembre</p>
+                    </div>
+                    <img src="assets/images/comunidad/limpiaplaya.png" alt="Playa" class="evento-img">
+                  </div>
+                  
+                  <div class="evento-actions">
+                    <button class="btn-evento-estado unirse">Unirse al evento</button>
+                    <button class="btn-evento-close grey">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="evento-card" data-fecha="9 de noviembre - 10 am" data-lugar="Huerto ecológico - San Miguel">
+                <div class="evento-info">
+                  <div class="evento-header-row">
+                    <div class="evento-text-col">
+                      <h4 class="evento-title">Cosecha comunal</h4>
+                      <p class="evento-desc">Nos reuniremos en el huerto ecológico del barrio para cosechar productos frescos el domingo 9 de noviembre</p>
+                    </div>
+                    <img src="assets/images/comunidad/cosecha.jpg" alt="Cosecha" class="evento-img">
+                  </div>
+                  
+                  <div class="evento-actions">
+                    <button class="btn-evento-estado unirse">Unirse al evento</button>
+                    <button class="btn-evento-close grey">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="pagination-container">
+              <button class="pagination-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <span class="pagination-text">Pagina 1</span>
+              <button class="pagination-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-crear-evento">
+          <div class="modal-content modal-evento-box">
+            
+            <div class="modal-evento-header-row">
+              <h2 class="modal-evento-title">Nuevo evento</h2>
+              <button class="btn-adjuntar-clip">
+                <img src="assets/images/comunidad/clip.png" alt="Adjuntar" class="clip-icon-img">
+              </button>
+            </div>
+          
+            <div class="modal-evento-form">
+              
+              <div class="form-group-evento">
+                <label>Nombre</label>
+                <input type="text" class="input-evento-styled">
+              </div>
+            
+              <div class="form-row-evento">
+                <div class="form-group-evento">
+                  <label>Fecha</label>
+                  <input type="date" class="input-evento-styled">
+                </div>
+                <div class="form-group-evento">
+                  <label>Hora</label>
+                  <input type="time" class="input-evento-styled">
+                </div>
+              </div>
+            
+              <div class="form-group-evento">
+                <label>Punto de encuentro</label>
+                <input type="text" class="input-evento-styled">
+              </div>
+            
+              <div class="form-group-evento">
+                <label>Descripción</label>
+                <textarea class="textarea-evento-styled" rows="4"></textarea>
+              </div>
+            
+            </div>
+          
+            <div class="modal-evento-actions">
+              <button class="btn-modal-create" id="btn-confirmar-crear-evento">Crear evento</button>
+              <button class="btn-modal-cancel" id="btn-cancelar-crear-evento">Cancelar</button>
+            </div>
+          
+          </div>
+        </div>
+
+      <div class="modal-overlay" id="modal-seleccion-inscripcion">
+        <div class="modal-content modal-seleccion-box">
+          
+          <h2 class="modal-seleccion-title">¿Cómo desea inscribirse al evento seleccionado?</h2>
+
+          <div class="modal-seleccion-info">
+            <p><strong>Evento:</strong> <span id="modal-evento-nombre"></span></p>
+            <p><strong>Fecha y hora:</strong> <span id="modal-evento-fecha"></span></p>
+            <p><strong>Lugar:</strong> <span id="modal-evento-lugar"></span></p>
+          </div>
+        
+          <div class="modal-seleccion-buttons">
+            <button class="btn-seleccion-green" id="btn-opcion-individual">Individual</button>
+            <button class="btn-seleccion-blue" id="btn-opcion-familia">Familia</button>
+          </div>  
+
+        </div>
+      </div>
+
+        <div id="page-exito-individual" class="dash-page">
+          <div class="exito-container">
+            <h2 class="exito-title">Te uniste al evento de la comunidad</h2>
+            <img src="assets/images/comunidad/eventoindividual.png" alt="Éxito Individual" class="exito-img">
+            <button class="btn-continuar-exito">Continuar</button>
+          </div>
+        </div>
+      
+        <div id="page-exito-familia" class="dash-page">
+          <div class="exito-container">
+            <h2 class="exito-title">Tu familia se unió al evento de la comunidad</h2>
+            <img src="assets/images/comunidad/eventofamilia.png" alt="Éxito Familia" class="exito-img">
+            <button class="btn-continuar-exito">Continuar</button>
+          </div>
+        </div>
+
+        <!-- PERFIL -->
+        <div id="page-perfil" class="dash-page active">
+          <div class="perfil-container">
+            <!-- Cabecera del perfil -->
+            <div class="perfil-header">
+              <img src="assets/images/perfil/carlos.png" alt="Marcos" class="perfil-avatar-large">
+              <div class="perfil-info">
+                <h2 class="perfil-name">Marcos</h2>
+                <p class="perfil-username">MarquitosElReciclador777</p>
+              </div>
+              <div class="perfil-stats">
+                <div class="perfil-stat-item">
+                  <h3 class="stat-number">15000</h3>
+                  <p class="stat-label">Puntos Totales</p>
+                </div>
+                <div class="perfil-stat-item">
+                  <h3 class="stat-number">28</h3>
+                  <p class="stat-label">Amigos</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="perfil-actions">
+              <button class="btn-perfil-secondary">Editar Perfil</button>
+              <button class="btn-perfil-secondary">Compartir Perfil</button>
+            </div>
+
+            <!-- Pestañas -->
+            <div class="perfil-tabs">
+              <button class="perfil-tab active" data-tab="resumen">Resumen</button>
+              <button class="perfil-tab" data-tab="familia">Familia</button>
+              <button class="perfil-tab" data-tab="progreso">Ver Progreso</button>
+              <button class="perfil-tab" data-tab="favoritos">Favoritos</button>
+            </div>
+
+            <!-- Contenido de las pestañas -->
+            <div class="perfil-content">
+              <!-- Pestaña Resumen -->
+              <div class="perfil-tab-content active" id="tab-resumen">
+                <div class="perfil-grid">
+                  <!-- Columna Izquierda -->
+                  <div class="perfil-col-left">
+                    <!-- Mi Compromiso -->
+                    <div class="perfil-card">
+                      <div class="perfil-card-header">
+                        <h3>Mi compromiso</h3>
+                        <button class="btn-editar" id="btn-editar-compromiso">Editar</button>
+                      </div>
+                      <div class="perfil-card-body">
+                        <p class="compromiso-text" id="compromiso-texto">Promover hábitos sostenibles en mi hogar y escuela, compartiendo conocimientos sobre reciclaje y conservación del medio ambiente</p>
+                        <p class="compromiso-fecha">Establecido hace 12 días</p>
+                      </div>
+                    </div>
+
+                    <!-- Medallas y Logros -->
+                    <div class="perfil-card">
+                      <div class="perfil-card-header">
+                        <h3>Medallas y Logros</h3>
+                        <a href="#" class="ver-todos">Ver todos(23)</a>
+                      </div>
+                      <div class="perfil-card-body">
+                        <div class="medallas-grid">
+                          <div class="medalla-item">
+                            <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                            <p class="medalla-titulo">Maestro del reciclaje</p>
+                            <p class="medalla-fecha">Hace 2 días</p>
+                          </div>
+                          <div class="medalla-item">
+                            <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                            <p class="medalla-titulo">Guardián del Agua</p>
+                            <p class="medalla-fecha">Hace 4 días</p>
+                          </div>
+                          <div class="medalla-item">
+                            <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                            <p class="medalla-titulo">Agricultor Pro</p>
+                            <p class="medalla-fecha">Hace 1 día</p>
+                          </div>
+                          <div class="medalla-item">
+                            <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                            <p class="medalla-titulo">Sembrador</p>
+                            <p class="medalla-fecha">Hace 3 días</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Columna Derecha -->
+                  <div class="perfil-col-right">
+                    <!-- Racha Actual -->
+                    <div class="perfil-card racha-card">
+                      <h3>Racha Actual</h3>
+                      <div class="racha-content">
+                        <img src="assets/images/plant.png" alt="Planta" class="racha-icon">
+                        <h2 class="racha-number">16</h2>
+                      </div>
+                      <p class="racha-label">días consecutivos</p>
+                      <p class="racha-record">Tu mejor: 20 días</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pestaña Familia -->
+              <div class="perfil-tab-content" id="tab-familia">
+                <!-- Banner de Familia -->
+                <div class="familia-banner">
+                  <div class="familia-banner-content">
+                    <h2>Familia Gonzáles</h2>
+                    <p>Juntos cuidamos el planeta y promovemos hábitos sustentables</p>
+                    <div class="familia-banner-stats">
+                      <span>Creada hace 3 meses</span>
+                      <span>•</span>
+                      <span>4 miembros</span>
+                    </div>
+                  </div>
+                  <button class="btn-editar-familia">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Título Miembros -->
+                <h3 class="familia-section-title">Miembros de la Familia (4)</h3>
+
+                <!-- Grid de Miembros -->
+                <div class="familia-members-grid">
+                  <!-- Miembro 1: Juan -->
+                  <div class="familia-member-card">
+                    <img src="assets/images/perfil/padre.png" alt="Juan" class="familia-member-avatar">
+                    <h4 class="familia-member-name">Juan</h4>
+                    <span class="familia-member-badge padre">Padre</span>
+                    <p class="familia-member-contribucion">8/10 actividades completadas</p>
+                    <div class="familia-member-progress">
+                      <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 75%;"></div>
+                      </div>
+                    </div>
+                    <button class="btn-ver-perfil" data-member="juan">Ver perfil</button>
+                  </div>
+
+                  <!-- Miembro 2: Camila -->
+                  <div class="familia-member-card">
+                    <img src="assets/images/perfil/madre.png" alt="Camila" class="familia-member-avatar">
+                    <h4 class="familia-member-name">Camila</h4>
+                    <span class="familia-member-badge madre">Madre</span>
+                    <p class="familia-member-contribucion">9/10 actividades completadas</p>
+                    <div class="familia-member-progress">
+                      <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 85%;"></div>
+                      </div>
+                    </div>
+                    <button class="btn-ver-perfil" data-member="camila">Ver perfil</button>
+                  </div>
+
+                  <!-- Miembro 3: Marcos -->
+                  <div class="familia-member-card">
+                    <img src="assets/images/perfil/carlos.png" alt="Marcos" class="familia-member-avatar">
+                    <h4 class="familia-member-name">Marcos</h4>
+                    <span class="familia-member-badge hijo">Hijo</span>
+                    <p class="familia-member-contribucion">8/10 actividades completadas</p>
+                    <div class="familia-member-progress">
+                      <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 70%;"></div>
+                      </div>
+                    </div>
+                    <button class="btn-ver-perfil" data-member="marcos">Ver perfil</button>
+                  </div>
+
+                  <!-- Miembro 4: Pepe -->
+                  <div class="familia-member-card">
+                    <img src="assets/images/perfil/pepe.png" alt="Pepe" class="familia-member-avatar">
+                    <h4 class="familia-member-name">Pepe</h4>
+                    <span class="familia-member-badge hijo">Hijo</span>
+                    <p class="familia-member-contribucion">6/10 actividades completadas</p>
+                    <div class="familia-member-progress">
+                      <div class="progress-bar-small">
+                        <div class="progress-fill-small" style="width: 60%;"></div>
+                      </div>
+                    </div>
+                    <button class="btn-ver-perfil" data-member="pepe">Ver perfil</button>
+                  </div>
+
+                  <!-- Agregar Familiar -->
+                  <div class="familia-member-card agregar-card">
+                    <div class="agregar-icon">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </div>
+                    <h4 class="agregar-titulo">Agregar Familiar</h4>
+                    <p class="agregar-subtitulo">Invita a más personas</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pestaña Ver Progreso -->
+              <div class="perfil-tab-content" id="tab-progreso">
+                <div class="progreso-grid">
+                  <!-- Columna Pendientes -->
+                  <div class="progreso-column">
+                    <button class="progreso-tab-btn active">Pendientes</button>
+                    <div class="retos-list">
+                      <!-- Reto 1 -->
+                      <div class="reto-card">
+                        <h4 class="reto-titulo">Reciclar 5 botellas de plástico</h4>
+                        <div class="reto-progress-wrapper">
+                          <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Reto 2 -->
+                      <div class="reto-card">
+                        <h4 class="reto-titulo">Lectura de cuidado de energía 1</h4>
+                        <div class="reto-progress-wrapper">
+                          <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%;"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Reto 3 -->
+                      <div class="reto-card">
+                        <h4 class="reto-titulo">Actividad familiar 1</h4>
+                        <div class="reto-progress-wrapper">
+                          <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn-ver-mas">Ver más</button>
+                  </div>
+
+                  <!-- Columna Completadas -->
+                  <div class="progreso-column">
+                    <button class="progreso-tab-btn active">Completadas</button>
+                    <div class="retos-list">
+                      <!-- Reto Completado 1 -->
+                      <div class="reto-card completado">
+                        <h4 class="reto-titulo">Reto diario 1</h4>
+                        <div class="reto-progress-wrapper">
+                          <div class="progress-bar">
+                            <div class="progress-fill completado" style="width: 100%;"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Reto Completado 2 -->
+                      <div class="reto-card completado">
+                        <h4 class="reto-titulo">¡Empecemos a germinar!</h4>
+                        <div class="reto-progress-wrapper">
+                          <div class="progress-bar">
+                            <div class="progress-fill completado" style="width: 100%;"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Reto Completado 3 -->
+                      <div class="reto-card completado">
+                        <h4 class="reto-titulo">¡Hora de ahorrar energía!</h4>
+                        <div class="reto-progress-wrapper">
+                          <div class="progress-bar">
+                            <div class="progress-fill completado" style="width: 100%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn-ver-mas">Ver más</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pestaña Favoritos -->
+              <div class="perfil-tab-content" id="tab-favoritos">
+                <!-- Tags de Filtro -->
+                <div class="favoritos-tags">
+                  <span class="tag-filter active">Todos</span>
+                  <span class="tag-filter">Infografías</span>
+                  <span class="tag-filter">Lecturas</span>
+                  <span class="tag-filter">Videos</span>
+                </div>
+
+                <!-- Galería de Contenido -->
+                <div class="favoritos-gallery">
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/infografia1.png" alt="Infografía" class="favorito-thumbnail">
+                      </div>
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/infografia2.png" alt="Infografía" class="favorito-thumbnail">
+                      </div>
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/infografia3.png" alt="Infografía" class="favorito-thumbnail">
+                      </div>
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/infografia4.png" alt="Infografía" class="favorito-thumbnail">
+                      </div>
+                      <div class="favorito-card video-card">
+                        <img src="assets/images/perfil/video1.png" alt="Video" class="favorito-thumbnail">
+                        <div class="video-overlay">
+                          <svg class="play-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="white" opacity="0.9"/>
+                            <path d="M20 16L32 24L20 32V16Z" fill="#69A44E"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="favorito-card video-card">
+                        <img src="assets/images/perfil/video2.png" alt="Video" class="favorito-thumbnail">
+                        <div class="video-overlay">
+                          <svg class="play-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="white" opacity="0.9"/>
+                            <path d="M20 16L32 24L20 32V16Z" fill="#69A44E"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/libro1.png" alt="Libro" class="favorito-thumbnail">
+                      </div>
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/infografia6.png" alt="Infografía" class="favorito-thumbnail">
+                      </div>
+                      <div class="favorito-card">
+                        <img src="assets/images/perfil/infografia5.png" alt="Infografía" class="favorito-thumbnail">
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PÁGINA DE PERFIL DE MIEMBRO (PEPE) -->
+        <div id="page-miembro-perfil" class="dash-page">
+          <!-- Breadcrumb -->
+          <div class="breadcrumb">
+            <span class="breadcrumb-item" id="breadcrumb-familia">Familia</span>
+            <span class="breadcrumb-separator">></span>
+            <span class="breadcrumb-item active" id="breadcrumb-nombre">Pepe</span>
+          </div>
+
+          <!-- Cabecera del perfil -->
+          <div class="miembro-perfil-header">
+            <img src="assets/images/perfil/pepe.png" alt="Pepe" class="miembro-perfil-avatar" id="miembro-avatar">
+            <div class="miembro-perfil-info">
+              <h2 class="miembro-perfil-nombre" id="miembro-nombre">Pepe</h2>
+              <p class="miembro-perfil-username" id="miembro-username">xXPepePr0Xx</p>
+            </div>
+            <div class="miembro-perfil-stats">
+              <div class="miembro-stat-item">
+                <h3 class="stat-number" id="miembro-puntos">15000</h3>
+                <p class="stat-label">Puntos Totales</p>
+              </div>
+              <div class="miembro-stat-item">
+                <h3 class="stat-number" id="miembro-amigos">28</h3>
+                <p class="stat-label">Amigos</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="miembro-perfil-actions">
+            <button class="btn-miembro-secondary">Compartir Perfil</button>
+            <button class="btn-miembro-danger">Eliminar</button>
+          </div>
+
+          <!-- Contenido del perfil -->
+          <div class="miembro-perfil-content">
+            <div class="perfil-grid">
+              <!-- Columna Izquierda -->
+              <div class="perfil-col-left">
+                <!-- Mi Compromiso -->
+                <div class="perfil-card">
+                  <div class="perfil-card-header">
+                    <h3>Mi compromiso</h3>
+                  </div>
+                  <div class="perfil-card-body">
+                    <p class="compromiso-text">Promover hábitos sostenibles en mi hogar y escuela, compartiendo conocimientos sobre reciclaje y conservación del medio ambiente con mi familia.</p>
+                    <p class="compromiso-fecha">Establecido hace 10 días</p>
+                  </div>
+                </div>
+
+                <!-- Medallas y Logros -->
+                <div class="perfil-card">
+                  <div class="perfil-card-header">
+                    <h3>Medallas y Logros</h3>
+                    <a href="#" class="ver-todos">Ver todos(23)</a>
+                  </div>
+                  <div class="perfil-card-body">
+                    <div class="medallas-grid">
+                      <div class="medalla-item">
+                        <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                        <p class="medalla-titulo">Maestro del reciclaje</p>
+                        <p class="medalla-fecha">Hace 2 días</p>
+                      </div>
+                      <div class="medalla-item">
+                        <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                        <p class="medalla-titulo">Guardián del Agua</p>
+                        <p class="medalla-fecha">Hace 4 días</p>
+                      </div>
+                      <div class="medalla-item">
+                        <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                        <p class="medalla-titulo">Agricultor Pro</p>
+                        <p class="medalla-fecha">Hace 1 día</p>
+                      </div>
+                      <div class="medalla-item">
+                        <img src="assets/images/perfil/medallas.png" alt="Medalla" class="medalla-img">
+                        <p class="medalla-titulo">Sembrador</p>
+                        <p class="medalla-fecha">Hace 3 días</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna Derecha -->
+              <div class="perfil-col-right">
+                <!-- Racha Actual -->
+                <div class="perfil-card racha-card">
+                  <h3>Racha Actual</h3>
+                  <div class="racha-content">
+                    <img src="assets/images/plant.png" alt="Planta" class="racha-icon">
+                    <h2 class="racha-number">13</h2>
+                  </div>
+                  <p class="racha-label">días consecutivos</p>
+                  <p class="racha-record">Tu mejor: 20 días</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<!-- AJUSTES -->
+<div id="page-ajustes" class="dash-page">
+  <h1 class="dash-title">Ajustes</h1>
+  <p class="dash-subtitle">Personaliza tu experiencia en EcoMind.</p>
+
+  <div class="ajustes-container">
+
+    <!-- SECCIÓN CUENTA -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Cuenta</h3>
+      </div>
+      <div class="perfil-card-body ajustes-body">
+
+        <div class="ajuste-item">
+          <label>Nombre</label>
+          <input type="text" class="ajuste-input" value="Marcos" />
+        </div>
+
+        <div class="ajuste-item">
+          <label>Usuario</label>
+          <input type="text" class="ajuste-input" value="MarquitosElReciclador777" />
+        </div>
+
+        <div class="ajuste-item">
+          <label>Correo</label>
+          <input type="email" class="ajuste-input" value="marcos@example.com" />
+        </div>
+
+        <button class="btn-modal-primary">Actualizar datos</button>
+      </div>
+    </div>
+
+    <!-- SECCIÓN NOTIFICACIONES -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Notificaciones</h3>
+      </div>
+
+      <div class="perfil-card-body ajustes-body">
+
+        <div class="ajuste-item toggle-row">
+          <span>Notificaciones de retos</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="ajuste-item toggle-row">
+          <span>Recordatorios diarios</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="ajuste-item toggle-row">
+          <span>Novedades de la comunidad</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN APLICACIÓN -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Preferencias de la App</h3>
+      </div>
+      <div class="perfil-card-body ajustes-body">
+        
+        <div class="ajuste-item toggle-row">
+          <span>Tema oscuro</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="ajuste-item">
+          <label>Idioma</label>
+          <select class="ajuste-input">
+            <option selected>Español</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CERRAR SESIÓN -->
+    <div class="perfil-card">
+      <div class="perfil-card-header">
+        <h3>Sesión</h3>
+      </div>
+      <div class="perfil-card-body ajustes-body">
+        <button class="btn-miembro-danger" style="width: 100%; margin-top: 10px;">
+          Cerrar Sesión
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+      </section>
+    </main>
+  </div>
+  
+ <!-- Modal Editar Compromiso -->
+  <div class="modal-overlay" id="modal-compromiso">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Mi Compromiso</h3>
+        <button class="btn-cancelar" id="modal-close">Cancelar</button>
+      </div>
+      <div class="modal-body">
+        <div class="compromiso-texto-editable">
+          <p class="compromiso-texto-modal" id="compromiso-texto-modal">Promover hábitos sostenibles en mi hogar y escuela, compartiendo conocimientos sobre reciclaje y conservación del medio ambiente</p>
+          <textarea id="textarea-compromiso" class="compromiso-textarea-hidden" maxlength="150" style="display:none;">Promover hábitos sostenibles en mi hogar y escuela, compartiendo conocimientos sobre reciclaje y conservación del medio ambiente</textarea>
+        </div>
+        <p class="agregar-mas">Agregar más...</p>
+        <div class="character-counter">
+          <span id="char-count">112</span>/150
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal-primary" id="btn-guardar-compromiso">Guardar Compromiso</button>
+        <button class="btn-modal-secondary" id="btn-eliminar-compromiso">Eliminar compromiso</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/scripts/dashboard.js"></script>
+</body>
+
+</html>
