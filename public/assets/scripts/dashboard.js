@@ -659,6 +659,7 @@ if (btnIniciarActividad) {
 // ========= LÓGICA DE CHECKBOXES EN INSTRUCCIONES =========
 const instrScreen    = document.getElementById('actividad-screen-instrucciones');
 const completarBtn   = document.getElementById('btn-completar-actividad');
+
 const stepCheckboxes = instrScreen
   ? instrScreen.querySelectorAll('.instr-checkbox')
   : [];
@@ -668,7 +669,7 @@ function actualizarEstadoBotonActividad() {
 
   const todosMarcados = Array.from(stepCheckboxes).every(cb => cb.checked);
 
-  completarBtn.disabled = !todosMarcados;
+  // Solo usamos la clase .active para el estilo
   completarBtn.classList.toggle('active', todosMarcados);
 }
 
@@ -680,16 +681,24 @@ stepCheckboxes.forEach(cb => {
 // Estado inicial al cargar
 actualizarEstadoBotonActividad();
 
+
 // ========= CLICK EN "COMPLETAR ACTIVIDAD" =========
 if (completarBtn) {
   completarBtn.addEventListener('click', () => {
-    // Si aún está desactivado, no hace nada
-    if (completarBtn.disabled) return;
+    const estaActivo = completarBtn.classList.contains('active');
 
-    // Ir a pantalla de felicitación
+    // ❗ Si NO está activo, mostramos el mensaje y no avanzamos
+    if (!estaActivo) {
+      alert("⚠️ Aún te faltan tareas por completar.");
+      return;
+    }
+
+    // ✔ Si está activo, vamos a la pantalla de felicitación
     setActividadScreen('actividad-screen-completada');
   });
 }
+
+
 
 // ========= BOTÓN "CONTINUAR" (volver a Retos) =========
 const btnActividadContinuar = document.getElementById('btn-actividad-continuar');
