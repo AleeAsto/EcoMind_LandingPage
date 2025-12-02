@@ -659,6 +659,7 @@ if (btnIniciarActividad) {
 // ========= LÓGICA DE CHECKBOXES EN INSTRUCCIONES =========
 const instrScreen    = document.getElementById('actividad-screen-instrucciones');
 const completarBtn   = document.getElementById('btn-completar-actividad');
+
 const stepCheckboxes = instrScreen
   ? instrScreen.querySelectorAll('.instr-checkbox')
   : [];
@@ -668,7 +669,7 @@ function actualizarEstadoBotonActividad() {
 
   const todosMarcados = Array.from(stepCheckboxes).every(cb => cb.checked);
 
-  completarBtn.disabled = !todosMarcados;
+  // Solo usamos la clase .active para el estilo
   completarBtn.classList.toggle('active', todosMarcados);
 }
 
@@ -680,16 +681,24 @@ stepCheckboxes.forEach(cb => {
 // Estado inicial al cargar
 actualizarEstadoBotonActividad();
 
+
 // ========= CLICK EN "COMPLETAR ACTIVIDAD" =========
 if (completarBtn) {
   completarBtn.addEventListener('click', () => {
-    // Si aún está desactivado, no hace nada
-    if (completarBtn.disabled) return;
+    const estaActivo = completarBtn.classList.contains('active');
 
-    // Ir a pantalla de felicitación
+    // ❗ Si NO está activo, mostramos el mensaje y no avanzamos
+    if (!estaActivo) {
+      alert("⚠️ Aún te faltan tareas por completar.");
+      return;
+    }
+
+    // ✔ Si está activo, vamos a la pantalla de felicitación
     setActividadScreen('actividad-screen-completada');
   });
 }
+
+
 
 // ========= BOTÓN "CONTINUAR" (volver a Retos) =========
 const btnActividadContinuar = document.getElementById('btn-actividad-continuar');
@@ -708,5 +717,407 @@ if (btnActividadContinuar) {
       cambiarPantallaActividad('detalle');}
       window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // ==========================================
+    // 7. ELIMINAR ACTIVIDAD (RETOS)
+    // ==========================================
+    
+    const modalEliminar = document.getElementById('modal-eliminar-actividad');
+    const spanNombreActividad = document.getElementById('nombre-actividad-borrar');
+    const btnCancelarBorrado = document.getElementById('btn-cancelar-borrado');
+    const btnConfirmarBorrado = document.getElementById('btn-confirmar-borrado');
+    let itemParaBorrar = null; // Variable para guardar qué elemento vamos a borrar
+
+    // 1. Agregar evento click a los items borrables
+    const itemsBorrables = document.querySelectorAll('.progreso-item[data-deletable="true"]');
+    
+    itemsBorrables.forEach(item => {
+        item.addEventListener('click', function() {
+            // Guardamos el elemento HTML completo en la variable
+            itemParaBorrar = this;
+            
+            // Obtenemos el texto del span dentro del item
+            const texto = this.querySelector('.p-info span').textContent;
+            
+            // Ponemos el texto en el modal y lo mostramos
+            if(spanNombreActividad) spanNombreActividad.textContent = texto;
+            if(modalEliminar) modalEliminar.classList.add('active');
+        });
+    });
+
+    // 2. Botón Cancelar
+    if (btnCancelarBorrado && modalEliminar) {
+        btnCancelarBorrado.addEventListener('click', () => {
+            modalEliminar.classList.remove('active');
+            itemParaBorrar = null; // Limpiamos la variable
+        });
+    }
+
+    // 3. Botón Confirmar (Eliminar del DOM)
+    if (btnConfirmarBorrado && modalEliminar) {
+        btnConfirmarBorrado.addEventListener('click', () => {
+            if (itemParaBorrar) {
+                // Animación simple de desaparición
+                itemParaBorrar.style.opacity = '0';
+                itemParaBorrar.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    itemParaBorrar.remove(); // Elimina el elemento del HTML
+                    modalEliminar.classList.remove('active');
+                    itemParaBorrar = null;
+                }, 300); // Espera 300ms para que se vea la animación
+            }
+        });
+    }
+
+    // 4. Botón Confirmar (Eliminar de verdad)
+    if (btnConfirmarBorrado && modalEliminar) {
+        btnConfirmarBorrado.addEventListener('click', () => {
+            if (itemParaBorrar) {
+                // 1. Obtenemos el nombre de la actividad que estamos borrando
+                const nombreActividad = itemParaBorrar.querySelector('.p-info span').textContent.trim();
+
+                // 2. Efecto visual en el elemento clickeado
+                itemParaBorrar.style.transition = 'all 0.3s ease';
+                itemParaBorrar.style.opacity = '0';
+                itemParaBorrar.style.transform = 'translateX(20px)';
+                
+                // 3. Esperamos y borramos TODAS las coincidencias
+                setTimeout(() => {
+                    // Buscamos TODAS las actividades en la página (widget y modal ver más)
+                    const todasLasActividades = document.querySelectorAll('.progreso-item');
+
+                    todasLasActividades.forEach(actividad => {
+                        const spanNombre = actividad.querySelector('.p-info span');
+                        // Si el nombre coincide, la borramos
+                        if (spanNombre && spanNombre.textContent.trim() === nombreActividad) {
+                            actividad.remove();
+                        }
+                    });
+
+                    // Cerramos el modal y limpiamos
+                    modalEliminar.classList.remove('active');
+                    itemParaBorrar = null;
+                }, 300);
+            }
+        });
+    }
+
+    // ==========================================
+    // 8. POPUP "VER MÁS" PROGRESO
+    // ==========================================
+    
+    const btnVerMasProgreso = document.querySelector('.btn-ver-mas-small');
+    const modalVerMas = document.getElementById('modal-ver-mas-progreso');
+    const btnCerrarVerMasX = document.getElementById('btn-cerrar-ver-mas');
+    const btnCerrarVerMasAccion = document.getElementById('btn-cerrar-ver-mas-accion');
+
+    // Abrir modal
+    if (btnVerMasProgreso && modalVerMas) {
+        btnVerMasProgreso.addEventListener('click', () => {
+            modalVerMas.classList.add('active');
+        });
+    }
+
+    // Cerrar con la X
+    if (btnCerrarVerMasX && modalVerMas) {
+        btnCerrarVerMasX.addEventListener('click', () => {
+            modalVerMas.classList.remove('active');
+        });
+    }
+
+    // Cerrar con el botón "Volver"
+    if (btnCerrarVerMasAccion && modalVerMas) {
+        btnCerrarVerMasAccion.addEventListener('click', () => {
+            modalVerMas.classList.remove('active');
+        });
+    }
+
+    // Cerrar clickeando fuera
+    if (modalVerMas) {
+        modalVerMas.addEventListener('click', (e) => {
+            if (e.target === modalVerMas) {
+                modalVerMas.classList.remove('active');
+            }
+        });
+    }
+    
+    // ==========================================
+    // 9. LIGHTBOX PARA GALERÍA (APRENDE MÁS)
+    // ==========================================
+    
+    const modalLightbox = document.getElementById('modal-lightbox');
+    const imgLightbox = document.getElementById('img-lightbox-src');
+    const btnCerrarLightbox = document.getElementById('btn-cerrar-lightbox');
+    
+    // Seleccionamos todas las imágenes dentro de la galería masonry
+    const imagenesGaleria = document.querySelectorAll('.masonry-item img');
+
+    // 1. Asignar evento click a cada imagen de la galería
+    imagenesGaleria.forEach(img => {
+        img.addEventListener('click', () => {
+            if(modalLightbox && imgLightbox) {
+                // Copiamos la ruta (src) de la imagen clickeada al visor
+                imgLightbox.src = img.src; 
+                // Mostramos el modal
+                modalLightbox.classList.add('active'); 
+            }
+        });
+    });
+
+    // 2. Botón Cerrar
+    if(btnCerrarLightbox && modalLightbox) {
+        btnCerrarLightbox.addEventListener('click', (e) => {
+            // Evita que el click se propague al fondo (opcional, por seguridad)
+            e.stopPropagation();
+            modalLightbox.classList.remove('active');
+        });
+    }
+
+    // 3. Cerrar al hacer click en el fondo negro (fuera de la imagen)
+    if(modalLightbox) {
+        modalLightbox.addEventListener('click', (e) => {
+            if(e.target === modalLightbox || e.target.classList.contains('modal-content')) { 
+                modalLightbox.classList.remove('active');
+            }
+        });
+    }
+ // ==========================================
+    // 10. ELIMINAR RETOS EN PERFIL (PENDIENTES)
+    // ==========================================
+    
+    const modalEliminarPerfil = document.getElementById('modal-eliminar-actividad');
+    const spanNombreActividadPerfil = document.getElementById('nombre-actividad-borrar');
+    let itemPerfilParaBorrar = null;
+
+    // Detectar click en retos pendientes del perfil
+    document.addEventListener('click', (e) => {
+        const retoCard = e.target.closest('.reto-card[data-deletable="true"]');
+        
+        if (retoCard && document.getElementById('tab-progreso').classList.contains('active')) {
+            itemPerfilParaBorrar = retoCard;
+            const nombreReto = retoCard.getAttribute('data-nombre') || 
+                              retoCard.querySelector('.reto-titulo').textContent.trim();
+            
+            if (spanNombreActividadPerfil) spanNombreActividadPerfil.textContent = nombreReto;
+            if (modalEliminarPerfil) modalEliminarPerfil.classList.add('active');
+        }
+    });
+
+    // Reutilizamos el botón confirmar del modal existente
+    const btnConfirmarBorradoPerfil = document.getElementById('btn-confirmar-borrado');
+    
+    
+    // Variable global para controlar el contexto de eliminación
+    let esEliminacionDesdePerfil = false;
+
+    if (btnConfirmarBorradoPerfil) {
+        // Removemos listeners anteriores creando un clon
+        const nuevoBoton = btnConfirmarBorradoPerfil.cloneNode(true);
+        btnConfirmarBorradoPerfil.parentNode.replaceChild(nuevoBoton, btnConfirmarBorradoPerfil);
+        
+        nuevoBoton.addEventListener('click', () => {
+            // Verificar si es desde el perfil o desde retos
+            if (itemPerfilParaBorrar && document.getElementById('tab-progreso').classList.contains('active')) {
+                // Eliminación desde perfil
+                const nombreActividad = itemPerfilParaBorrar.getAttribute('data-nombre') || 
+                                       itemPerfilParaBorrar.querySelector('.reto-titulo').textContent.trim();
+
+                // Animación de salida
+                itemPerfilParaBorrar.style.transition = 'all 0.3s ease';
+                itemPerfilParaBorrar.style.opacity = '0';
+                itemPerfilParaBorrar.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    // Eliminar del perfil (vista principal)
+                    if (itemPerfilParaBorrar && itemPerfilParaBorrar.closest('#tab-progreso')) {
+                        itemPerfilParaBorrar.remove();
+                    }
+                    
+                    // Eliminar del modal Ver Más si está abierto
+                    const modalRetosListPerfil = document.getElementById('modal-retos-list-perfil');
+                    if (modalRetosListPerfil) {
+                        const retosEnModal = modalRetosListPerfil.querySelectorAll('.reto-card');
+                        retosEnModal.forEach(reto => {
+                            const tituloReto = reto.getAttribute('data-nombre') || 
+                                             reto.querySelector('.reto-titulo')?.textContent.trim();
+                            if (tituloReto === nombreActividad) {
+                                reto.remove();
+                            }
+                        });
+                    }
+                    
+                    // También eliminar del widget de retos si existe
+                    const itemsWidget = document.querySelectorAll('.progreso-item[data-deletable="true"]');
+                    itemsWidget.forEach(item => {
+                        const spanNombre = item.querySelector('.p-info span');
+                        if (spanNombre && spanNombre.textContent.trim() === nombreActividad) {
+                            item.remove();
+                        }
+                    });
+
+                    if (modalEliminarPerfil) modalEliminarPerfil.classList.remove('active');
+                    itemPerfilParaBorrar = null;
+                }, 300);
+            } else if (itemParaBorrar) {
+                // Eliminación desde retos (código original)
+                const nombreActividad = itemParaBorrar.querySelector('.p-info span').textContent.trim();
+
+                itemParaBorrar.style.transition = 'all 0.3s ease';
+                itemParaBorrar.style.opacity = '0';
+                itemParaBorrar.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    const todasLasActividades = document.querySelectorAll('.progreso-item');
+
+                    todasLasActividades.forEach(actividad => {
+                        const spanNombre = actividad.querySelector('.p-info span');
+                        if (spanNombre && spanNombre.textContent.trim() === nombreActividad) {
+                            actividad.remove();
+                        }
+                    });
+
+                    if (modalEliminarPerfil) modalEliminarPerfil.classList.remove('active');
+                    itemParaBorrar = null;
+                }, 300);
+            }
+        });
+    }
+
+    // ==========================================
+    // 11. BOTÓN "VER MÁS" EN PERFIL
+    // ==========================================
+    
+    const modalVerMasPerfil = document.getElementById('modal-ver-mas-perfil');
+    const btnCerrarVerMasPerfil = document.getElementById('btn-cerrar-ver-mas-perfil');
+    const btnCerrarVerMasPerfilAccion = document.getElementById('btn-cerrar-ver-mas-perfil-accion');
+    const tituloModalPerfil = document.getElementById('titulo-modal-perfil-progreso');
+    const modalRetosListPerfil = document.getElementById('modal-retos-list-perfil');
+
+    // Detectar click en botones "Ver más" del perfil
+    document.addEventListener('click', (e) => {
+        const btnVerMas = e.target.closest('.btn-ver-mas[data-tipo]');
+        
+        if (btnVerMas && document.getElementById('tab-progreso').classList.contains('active')) {
+            const tipo = btnVerMas.getAttribute('data-tipo');
+            const esPendiente = tipo === 'pendientes';
+            
+            // Cambiar título del modal
+            if (tituloModalPerfil) {
+                tituloModalPerfil.textContent = esPendiente ? 'Actividades Pendientes' : 'Actividades Completadas';
+            }
+            
+            // Obtener todos los retos del tipo correspondiente
+            const contenedor = esPendiente ? 
+                              document.getElementById('retos-pendientes-perfil') :
+                              document.getElementById('retos-completados-perfil');
+            
+            if (contenedor && modalRetosListPerfil) {
+                // Clonar todos los retos
+                modalRetosListPerfil.innerHTML = '';
+                const retos = contenedor.querySelectorAll('.reto-card');
+                
+                retos.forEach(reto => {
+                    const clone = reto.cloneNode(true);
+                    
+                    // Si es pendiente, mantener data-deletable para que sea clickeable
+                    if (!esPendiente) {
+                        clone.removeAttribute('data-deletable');
+                        clone.style.cursor = 'default';
+                    }
+                    
+                    modalRetosListPerfil.appendChild(clone);
+                });
+                
+                // Agregar más retos de ejemplo
+                agregarRetosEjemploPerfil(esPendiente);
+            }
+            
+            if (modalVerMasPerfil) modalVerMasPerfil.classList.add('active');
+        }
+    });
+
+    function agregarRetosEjemploPerfil(esPendiente) {
+        if (!modalRetosListPerfil) return;
+        
+        if (esPendiente) {
+            // Retos pendientes adicionales
+            const ejemplos = [
+                { titulo: 'Taller de compostaje casero', progreso: 15 },
+                { titulo: 'Almacena 4 pilas usadas', progreso: 25 },
+                { titulo: 'Lectura de cuidado de energia 2', progreso: 85 }
+            ];
+            
+            ejemplos.forEach(ejemplo => {
+                const div = document.createElement('div');
+                div.className = 'reto-card';
+                div.setAttribute('data-deletable', 'true');
+                div.setAttribute('data-nombre', ejemplo.titulo);
+                div.innerHTML = `
+                    <h4 class="reto-titulo">${ejemplo.titulo}</h4>
+                    <div class="reto-progress-wrapper">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${ejemplo.progreso}%;"></div>
+                        </div>
+                    </div>
+                `;
+                modalRetosListPerfil.appendChild(div);
+            });
+        } else {
+            // Retos completados adicionales
+            const ejemplos = [
+                'Guardar agua en la ducha',
+                'Separar residuos orgánicos',
+                'Apagar luces innecesarias'
+            ];
+            
+            ejemplos.forEach(titulo => {
+                const div = document.createElement('div');
+                div.className = 'reto-card completado';
+                div.innerHTML = `
+                    <h4 class="reto-titulo">${titulo}</h4>
+                    <div class="reto-progress-wrapper">
+                        <div class="progress-bar">
+                            <div class="progress-fill completado" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                `;
+                modalRetosListPerfil.appendChild(div);
+            });
+        }
+    }
+
+    // Cerrar modal Ver Más Perfil con X
+    if (btnCerrarVerMasPerfil && modalVerMasPerfil) {
+        btnCerrarVerMasPerfil.addEventListener('click', () => {
+            modalVerMasPerfil.classList.remove('active');
+        });
+    }
+
+    // Cerrar modal Ver Más Perfil con botón "Volver"
+    if (btnCerrarVerMasPerfilAccion && modalVerMasPerfil) {
+        btnCerrarVerMasPerfilAccion.addEventListener('click', () => {
+            modalVerMasPerfil.classList.remove('active');
+        });
+    }
+
+    // Cerrar modal Ver Más Perfil clickeando fuera
+    if (modalVerMasPerfil) {
+        modalVerMasPerfil.addEventListener('click', (e) => {
+            if (e.target === modalVerMasPerfil) {
+                modalVerMasPerfil.classList.remove('active');
+            }
+        });
+    }
+
+    // ========= CERRAR SESIÓN =========
+    document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".btn-miembro-danger");
+    if (!btn) return;
+
+    window.location.href = "index.html";
+    });
+
 }
+
 

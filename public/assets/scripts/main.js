@@ -231,8 +231,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            alert(`¡Bienvenido a EcoMind, ${name}!\nTu registro ha sido exitoso.`);
-            this.reset();
+              // Redirigir al dashboard después del registro
+            alert('Registro exitoso. ¡Bienvenido a EcoMind, ' + name + '!');
+            window.location.href = 'dashboard.html';
         });
     }
 

@@ -2925,7 +2925,335 @@ body.dashboard-body {
     -webkit-overflow-scrolling: touch;
   }
 }
+@media (max-width: 768px) {
+  .perfil-header {
+    padding: 1rem;
+  }
 
+  .perfil-avatar-large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .perfil-name {
+    font-size: 1.4rem;
+  }
+
+  .perfil-username {
+    font-size: 0.85rem;
+  }
+
+  .perfil-stats {
+    gap: 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .perfil-actions {
+    flex-direction: column;
+    padding-left: 2rem;
+    gap: 0.5rem;
+  }
+
+  .btn-perfil-secondary {
+    width: 100%;
+  }
+
+  .perfil-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+
+  .perfil-tab {
+    white-space: nowrap;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .perfil-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .perfil-avatar-large {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+  }
+
+  .perfil-info {
+    text-align: center;
+  }
+
+  .perfil-stats {
+    gap: 3rem;
+    justify-self: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .perfil-actions {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .medallas-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .medalla-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .medalla-titulo {
+    font-size: 0.75rem;
+  }
+
+  .medalla-fecha {
+    font-size: 0.7rem;
+  }
+
+  .progreso-grid {
+    gap: 1.5rem;
+  }
+
+  .progreso-column {
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+    border-radius: 25px;
+    margin-top: 1.8rem;
+  }
+
+  .progreso-tab-btn {
+    padding: 0.5rem 2.5rem;
+    font-size: 0.85rem;
+    left: 0.8rem;
+    top: -1.2rem;
+  }
+
+  .retos-list {
+    gap: 1.4rem;
+  }
+
+  .reto-titulo {
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .progress-bar {
+    height: 22px;
+    border: 4px solid #E9E9E9;
+  }
+
+  .btn-ver-mas {
+    padding: 0.6rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  .familia-members-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .familia-member-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .familia-member-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .familia-member-name {
+    font-size: 1rem;
+  }
+
+  .familia-member-badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.8rem;
+  }
+
+  .familia-member-contribucion {
+    font-size: 0.8rem;
+  }
+
+  .btn-ver-perfil {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .agregar-card {
+    min-height: 250px;
+  }
+
+  .agregar-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .agregar-titulo {
+    font-size: 1rem;
+  }
+
+  .agregar-subtitulo {
+    font-size: 0.8rem;
+  }
+
+  .favoritos-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .favorito-card {
+    aspect-ratio: 16/9;
+  }
+
+  .compromiso-text {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+  }
+
+  .racha-card {
+    padding: 1.3rem 1rem;
+  }
+
+  .racha-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .racha-number {
+    font-size: 2.8rem;
+  }
+
+  .racha-label {
+    font-size: 0.85rem;
+  }
+
+  .racha-record {
+    font-size: 0.85rem;
+
+
+  }
+
+   /* Modales responsive */
+  .modal-content {
+    width: 95%;
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    max-height: 60vh;
+  }
+
+  #modal-retos-list-perfil {
+    max-height: 50vh;
+  }
+
+  #modal-retos-list-perfil .reto-card {
+    margin-bottom: 1.2rem;
+  }
+
+  #modal-retos-list-perfil .reto-titulo {
+    font-size: 0.8rem;
+  }
+
+  #modal-retos-list-perfil .progress-bar {
+    height: 20px;
+  }
+
+  .btn-modal-primary,
+  .btn-modal-secondary {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  #modal-eliminar-actividad .modal-content {
+    max-width: 90%;
+    padding: 1.2rem;
+  }
+
+  #modal-eliminar-actividad .modal-body {
+    font-size: 0.85rem;
+  }
+
+  #modal-eliminar-actividad .modal-body p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #modal-eliminar-actividad .modal-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #modal-eliminar-actividad .btn-modal-secondary,
+  #modal-eliminar-actividad .btn-modal-danger-action {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-content {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .modal-header {
+    margin-bottom: 1rem;
+  }
+
+  .modal-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .btn-cancelar {
+    font-size: 0.85rem;
+  }
+
+  #modal-retos-list-perfil {
+    max-height: 45vh;
+  }
+
+  #modal-retos-list-perfil .reto-titulo {
+    font-size: 0.75rem;
+  }
+
+  #modal-retos-list-perfil .progress-bar {
+    height: 18px;
+    border: 3px solid #E9E9E9;
+  }
+
+  .btn-modal-primary,
+  .btn-modal-secondary {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================
+}
+
+/* =========================================
+   ESTILOS DE LA VISTA DE BÚSQUEDA
 /* =========================================
    ESTILOS DE LA VISTA DE BÚSQUEDA
    ========================================= */
@@ -3057,6 +3385,16 @@ body.dashboard-body {
   display: flex;
 }
 
+
+/* Modal Ver Más Perfil - z-index menor para que quede debajo */
+#modal-ver-mas-perfil {
+  z-index: 9999;
+}
+
+/* Modal Eliminar Actividad - z-index mayor para que quede encima del Ver Más */
+#modal-eliminar-actividad {
+  z-index: 10000;
+}
 .modal-content {
   background: white;
   border-radius: 16px;
@@ -5208,4 +5546,49 @@ body.dashboard-body {
     display: block;
     margin: 0 auto 1rem auto; /* centra perfectamente */
     text-align: center;
+}
+
+/* ESTILOS PARA ELIMINAR ACTIVIDAD EN RETOS */
+
+/* Solo los items marcados como borrables tendrán cursor de mano */
+.progreso-item[data-deletable="true"] {
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+.progreso-item[data-deletable="true"]:hover {
+    background-color: #fff0f0; /* Un fondo rojo muy sutil al pasar el mouse */
+    opacity: 0.8;
+}
+
+/* Estilo hover rojo para retos eliminables en el perfil */
+.reto-card[data-deletable="true"] {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reto-card[data-deletable="true"]:hover {
+    background-color: #fff0f0;
+    opacity: 0.8;
+    transform: translateX(3px);
+}
+
+/* Botón rojo para el modal */
+.btn-modal-danger-action {
+    background-color: #FF5555;
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-modal-danger-action:hover {
+    background-color: #e04444;
 }
