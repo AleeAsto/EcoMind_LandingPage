@@ -5209,3 +5209,35 @@ body.dashboard-body {
     margin: 0 auto 1rem auto; /* centra perfectamente */
     text-align: center;
 }
+
+/* ESTILOS PARA ELIMINAR ACTIVIDAD EN RETOS */
+
+/* Solo los items marcados como borrables tendrán cursor de mano */
+.progreso-item[data-deletable="true"] {
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.progreso-item[data-deletable="true"]:hover {
+    background-color: #fff0f0; /* Un fondo rojo muy sutil al pasar el mouse */
+    opacity: 0.8;
+}
+
+/* Botón rojo para el modal */
+.btn-modal-danger-action {
+    background-color: #FF5555;
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-modal-danger-action:hover {
+    background-color: #e04444;
+}

@@ -215,15 +215,18 @@
             <div class="p-info"><span>Reto diario</span></div>
             <div class="p-bar-bg"><div class="p-bar-fill" style="width: 65%;"></div></div>
           </div>
-          <div class="progreso-item">
+
+          <div class="progreso-item" data-deletable="true">
             <div class="p-info"><span>Lectura de cuidado de energia 1</span></div>
             <div class="p-bar-bg"><div class="p-bar-fill" style="width: 30%;"></div></div>
           </div>
-          <div class="progreso-item">
+
+          <div class="progreso-item" data-deletable="true">
             <div class="p-info"><span>Actividad familiar 1</span></div>
             <div class="p-bar-bg"><div class="p-bar-fill" style="width: 55%;"></div></div>
           </div>
-          <div class="progreso-item">
+
+          <div class="progreso-item" data-deletable="true">
             <div class="p-info"><span>Almacena 4 pilas usadas</span></div>
             <div class="p-bar-bg"><div class="p-bar-fill" style="width: 25%;"></div></div>
           </div>
@@ -1361,6 +1364,78 @@
       </div>
     </div>
   </div>
+
+  <div class="modal-overlay" id="modal-eliminar-actividad">
+  <div class="modal-content" style="max-width: 400px; text-align: center;">
+    <div class="modal-header" style="justify-content: center;">
+      <h3>Eliminar Actividad</h3>
+    </div>
+    <div class="modal-body">
+      <p>¿Estás seguro de que quieres eliminar la actividad <strong id="nombre-actividad-borrar"></strong>?</p>
+      <p style="font-size: 0.85rem; color: #999;">Esta acción no se puede deshacer.</p>
+    </div>
+    <div class="modal-footer" style="flex-direction: row; gap: 10px; margin-top: 10px;">
+       <button class="btn-modal-secondary" id="btn-cancelar-borrado" style="width: 50%;">Cancelar</button>
+       <button class="btn-modal-danger-action" id="btn-confirmar-borrado" style="width: 50%;">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-ver-mas-progreso">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Tu Progreso Completo</h3>
+      <button class="btn-cancelar" id="btn-cerrar-ver-mas" style="font-size: 1.5rem; line-height: 0.5;">&times;</button>
+    </div>
+    
+    <div class="modal-body" style="max-height: 300px; overflow-y: auto;">
+      <div class="progreso-list">
+        
+        <div class="progreso-item">
+          <div class="p-info"><span>Reto diario</span></div>
+          <div class="p-bar-bg"><div class="p-bar-fill" style="width: 65%;"></div></div>
+        </div>
+
+        <div class="progreso-item">
+          <div class="p-info"><span>Lectura de cuidado de energia 1</span></div>
+          <div class="p-bar-bg"><div class="p-bar-fill" style="width: 30%;"></div></div>
+        </div>
+
+        <div class="progreso-item">
+          <div class="p-info"><span>Actividad familiar 1</span></div>
+          <div class="p-bar-bg"><div class="p-bar-fill" style="width: 55%;"></div></div>
+        </div>
+
+        <div class="progreso-item">
+          <div class="p-info"><span>Taller de reciclaje avanzado</span></div>
+          <div class="p-bar-bg"><div class="p-bar-fill" style="width: 10%;"></div></div>
+        </div>
+
+        <div class="progreso-item">
+          <div class="p-info"><span>Documental: Océanos de plástico</span></div>
+          <div class="p-bar-bg"><div class="p-bar-fill" style="width: 90%;"></div></div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="modal-footer">
+       <button class="btn-modal-primary" id="btn-cerrar-ver-mas-accion">Volver</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-lightbox" style="background: rgba(0, 0, 0, 0.9);">
+  <div class="modal-content" style="background: transparent; box-shadow: none; width: auto; max-width: 100%; text-align: center; padding: 0; display: flex; flex-direction: column; align-items: center;">
+     
+     <img id="img-lightbox-src" src="" alt="Vista previa" style="max-height: 85vh; max-width: 90vw; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.5); object-fit: contain;">
+     
+     <button id="btn-cerrar-lightbox" style="margin-top: 20px; background: rgba(255,255,255,0.2); border: 1px solid white; color: white; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-size: 1rem;">
+        Cerrar vista
+     </button>
+
+  </div>
+</div>
 
   <script src="assets/scripts/dashboard.js"></script>
 </body>

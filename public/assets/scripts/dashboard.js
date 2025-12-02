@@ -708,5 +708,170 @@ if (btnActividadContinuar) {
       cambiarPantallaActividad('detalle');}
       window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // ==========================================
+    // 7. ELIMINAR ACTIVIDAD (RETOS)
+    // ==========================================
+    
+    const modalEliminar = document.getElementById('modal-eliminar-actividad');
+    const spanNombreActividad = document.getElementById('nombre-actividad-borrar');
+    const btnCancelarBorrado = document.getElementById('btn-cancelar-borrado');
+    const btnConfirmarBorrado = document.getElementById('btn-confirmar-borrado');
+    let itemParaBorrar = null; // Variable para guardar qué elemento vamos a borrar
+
+    // 1. Agregar evento click a los items borrables
+    const itemsBorrables = document.querySelectorAll('.progreso-item[data-deletable="true"]');
+    
+    itemsBorrables.forEach(item => {
+        item.addEventListener('click', function() {
+            // Guardamos el elemento HTML completo en la variable
+            itemParaBorrar = this;
+            
+            // Obtenemos el texto del span dentro del item
+            const texto = this.querySelector('.p-info span').textContent;
+            
+            // Ponemos el texto en el modal y lo mostramos
+            if(spanNombreActividad) spanNombreActividad.textContent = texto;
+            if(modalEliminar) modalEliminar.classList.add('active');
+        });
+    });
+
+    // 2. Botón Cancelar
+    if (btnCancelarBorrado && modalEliminar) {
+        btnCancelarBorrado.addEventListener('click', () => {
+            modalEliminar.classList.remove('active');
+            itemParaBorrar = null; // Limpiamos la variable
+        });
+    }
+
+    // 3. Botón Confirmar (Eliminar del DOM)
+    if (btnConfirmarBorrado && modalEliminar) {
+        btnConfirmarBorrado.addEventListener('click', () => {
+            if (itemParaBorrar) {
+                // Animación simple de desaparición
+                itemParaBorrar.style.opacity = '0';
+                itemParaBorrar.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    itemParaBorrar.remove(); // Elimina el elemento del HTML
+                    modalEliminar.classList.remove('active');
+                    itemParaBorrar = null;
+                }, 300); // Espera 300ms para que se vea la animación
+            }
+        });
+    }
+
+    // 4. Botón Confirmar (Eliminar de verdad)
+    if (btnConfirmarBorrado && modalEliminar) {
+        btnConfirmarBorrado.addEventListener('click', () => {
+            if (itemParaBorrar) {
+                // 1. Obtenemos el nombre de la actividad que estamos borrando
+                const nombreActividad = itemParaBorrar.querySelector('.p-info span').textContent.trim();
+
+                // 2. Efecto visual en el elemento clickeado
+                itemParaBorrar.style.transition = 'all 0.3s ease';
+                itemParaBorrar.style.opacity = '0';
+                itemParaBorrar.style.transform = 'translateX(20px)';
+                
+                // 3. Esperamos y borramos TODAS las coincidencias
+                setTimeout(() => {
+                    // Buscamos TODAS las actividades en la página (widget y modal ver más)
+                    const todasLasActividades = document.querySelectorAll('.progreso-item');
+
+                    todasLasActividades.forEach(actividad => {
+                        const spanNombre = actividad.querySelector('.p-info span');
+                        // Si el nombre coincide, la borramos
+                        if (spanNombre && spanNombre.textContent.trim() === nombreActividad) {
+                            actividad.remove();
+                        }
+                    });
+
+                    // Cerramos el modal y limpiamos
+                    modalEliminar.classList.remove('active');
+                    itemParaBorrar = null;
+                }, 300);
+            }
+        });
+    }
+
+    // ==========================================
+    // 8. POPUP "VER MÁS" PROGRESO
+    // ==========================================
+    
+    const btnVerMasProgreso = document.querySelector('.btn-ver-mas-small');
+    const modalVerMas = document.getElementById('modal-ver-mas-progreso');
+    const btnCerrarVerMasX = document.getElementById('btn-cerrar-ver-mas');
+    const btnCerrarVerMasAccion = document.getElementById('btn-cerrar-ver-mas-accion');
+
+    // Abrir modal
+    if (btnVerMasProgreso && modalVerMas) {
+        btnVerMasProgreso.addEventListener('click', () => {
+            modalVerMas.classList.add('active');
+        });
+    }
+
+    // Cerrar con la X
+    if (btnCerrarVerMasX && modalVerMas) {
+        btnCerrarVerMasX.addEventListener('click', () => {
+            modalVerMas.classList.remove('active');
+        });
+    }
+
+    // Cerrar con el botón "Volver"
+    if (btnCerrarVerMasAccion && modalVerMas) {
+        btnCerrarVerMasAccion.addEventListener('click', () => {
+            modalVerMas.classList.remove('active');
+        });
+    }
+
+    // Cerrar clickeando fuera
+    if (modalVerMas) {
+        modalVerMas.addEventListener('click', (e) => {
+            if (e.target === modalVerMas) {
+                modalVerMas.classList.remove('active');
+            }
+        });
+    }
+    
+    // ==========================================
+    // 9. LIGHTBOX PARA GALERÍA (APRENDE MÁS)
+    // ==========================================
+    
+    const modalLightbox = document.getElementById('modal-lightbox');
+    const imgLightbox = document.getElementById('img-lightbox-src');
+    const btnCerrarLightbox = document.getElementById('btn-cerrar-lightbox');
+    
+    // Seleccionamos todas las imágenes dentro de la galería masonry
+    const imagenesGaleria = document.querySelectorAll('.masonry-item img');
+
+    // 1. Asignar evento click a cada imagen de la galería
+    imagenesGaleria.forEach(img => {
+        img.addEventListener('click', () => {
+            if(modalLightbox && imgLightbox) {
+                // Copiamos la ruta (src) de la imagen clickeada al visor
+                imgLightbox.src = img.src; 
+                // Mostramos el modal
+                modalLightbox.classList.add('active'); 
+            }
+        });
+    });
+
+    // 2. Botón Cerrar
+    if(btnCerrarLightbox && modalLightbox) {
+        btnCerrarLightbox.addEventListener('click', (e) => {
+            // Evita que el click se propague al fondo (opcional, por seguridad)
+            e.stopPropagation();
+            modalLightbox.classList.remove('active');
+        });
+    }
+
+    // 3. Cerrar al hacer click en el fondo negro (fuera de la imagen)
+    if(modalLightbox) {
+        modalLightbox.addEventListener('click', (e) => {
+            if(e.target === modalLightbox || e.target.classList.contains('modal-content')) { 
+                modalLightbox.classList.remove('active');
+            }
+        });
+    }
 }
 
